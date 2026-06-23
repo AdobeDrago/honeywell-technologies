@@ -1,0 +1,37 @@
+{
+  "variantName": "cards-news",
+  "baseBlock": "cards",
+  "version": "1.0.0",
+  "created": "2026-06-23T01:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://honeywellbt.stage.honeywell.com/us/en",
+    "originPage": "Honeywell Building Technologies homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "news-articles",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "grid of cards (image + title + description), each linked",
+    "buttonCount": 0,
+    "imageCount": 6
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "insights/news/article card grids",
+      "image + title + description card layouts that are fully clickable"
+    ],
+    "notSuitableFor": [
+      "title-only navigational tile grids",
+      "rotating image+text carousels"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-23T01:31:00.000Z"
+  }
+}

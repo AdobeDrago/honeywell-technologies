@@ -1,0 +1,122 @@
+/* Block: hero-promo -- "Ready to connect?" promo / CTA banner */
+
+/* Values extracted from source computed styles (div.promobanner.aem-GridColumn). */
+
+/* full-width banner: defeat the section max-width / padding */
+/* stylelint-disable no-descending-specificity */
+main > .section > .hero-promo-wrapper,
+main .hero-promo-container,
+main .hero-promo-wrapper {
+  max-width: none;
+  padding: 0;
+}
+/* stylelint-enable no-descending-specificity */
+
+/* banner surface */
+.hero-promo {
+  position: relative;
+  padding: 40px 24px;
+  background-color: rgb(56 0 7);
+  background-image: linear-gradient(
+    115deg,
+    rgb(56 0 7) 0%,
+    rgb(90 0 51) 22%,
+    rgb(160 0 113) 45%,
+    rgb(212 0 97) 62%,
+    rgb(244 0 1) 100%
+  );
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: rgb(255 255 255);
+}
+
+/* content column -- left anchored, full text block */
+.hero-promo > div > div {
+  max-width: 612px;
+  padding: 48px 0;
+}
+
+/* eyebrow (first paragraph) */
+.hero-promo p:first-of-type {
+  margin: 0 0 16px;
+  color: rgb(210 214 219);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+/* heading */
+.hero-promo h3 {
+  max-width: 612px;
+  margin: 0;
+  color: rgb(255 255 255);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 1.22;
+}
+
+/* keep light text even though decorate() adds .no-image */
+.hero-promo.no-image p:first-of-type {
+  color: rgb(210 214 219);
+}
+
+.hero-promo.no-image h3,
+.hero-promo.no-image .button-container a.button {
+  color: rgb(255 255 255);
+}
+
+/* CTA button -- dark pill with light border + trailing arrow */
+.hero-promo .button-container {
+  margin: 24px 0 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+main .hero-promo a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 44px;
+  margin: 0;
+  padding: 9px 16px;
+  border: 1px solid rgb(210 214 219);
+  border-radius: 12px;
+  background-color: rgb(15 15 15);
+  color: rgb(255 255 255);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+main .hero-promo a.button:any-link::after {
+  content: '';
+  width: 18px;
+  height: 18px;
+  background-color: currentcolor;
+  mask: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11h12.17l-5.59-5.59L12 4l8 8-8 8-1.41-1.41L16.17 13H4z"/></svg>') no-repeat center / contain;
+}
+
+/* stylelint-disable no-descending-specificity */
+main .hero-promo a.button:hover,
+main .hero-promo a.button:focus {
+  background-color: rgb(40 40 40);
+  color: rgb(255 255 255);
+}
+/* stylelint-enable no-descending-specificity */
+
+@media (width >= 900px) {
+  .hero-promo {
+    padding: 40px 80px;
+  }
+
+  .hero-promo > div > div {
+    padding: 98px 0;
+  }
+
+  .hero-promo h3 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+}

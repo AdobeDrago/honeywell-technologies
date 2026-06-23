@@ -1,0 +1,37 @@
+{
+  "variantName": "carousel-stories",
+  "baseBlock": "carousel",
+  "version": "1.0.0",
+  "created": "2026-06-23T01:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://honeywellbt.stage.honeywell.com/us/en",
+    "originPage": "Honeywell Building Technologies homepage",
+    "blockPosition": "middle"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "light",
+    "density": "spacious",
+    "purpose": "customer-stories",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "half-image + half-text slide (subtitle + text + CTA link) per slide",
+    "buttonCount": 1,
+    "imageCount": 3
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "customer story / case study carousels",
+      "full-width image+text slides with a 'view story' CTA"
+    ],
+    "notSuitableFor": [
+      "full-bleed narrative storytelling slides",
+      "compact outcome/solution card sliders"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-23T01:31:00.000Z"
+  }
+}

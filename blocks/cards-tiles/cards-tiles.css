@@ -1,0 +1,92 @@
+/* cards-tiles — "industries" tile grid */
+
+/* Source: div.industry-grid .tile-grid__list--industryVariation (Honeywell stage) */
+
+/* Values from source computed styles. */
+
+.cards-tiles > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+}
+
+/* each tile = li; the link fills it */
+.cards-tiles > ul > li {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+/* EDS wraps the bare <a> in a <p> and auto-decorates the link as .button; flatten the wrapper */
+.cards-tiles > ul > li > p {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+}
+
+/* the tile surface — mirrors a.tile-grid__item.            */
+
+/* High specificity to override global a.button:any-link.    */
+main .cards-tiles > ul > li a,
+main .cards-tiles > ul > li a.button:any-link {
+  position: relative;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-end;
+  width: 100%;
+  max-width: none;
+  min-height: 180px;
+  margin: 0;
+  padding: 40px;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+  background-color: rgb(249 250 251);
+  color: var(--link-color);
+  overflow: hidden;
+  text-decoration: none;
+  text-align: left;
+  white-space: normal;
+  text-overflow: clip;
+
+  /* title typography (source .content-box .title) */
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  text-transform: capitalize;
+  cursor: pointer;
+  transition: background-color 0.4s, backdrop-filter 0.4s;
+}
+
+/* hover / focus — source: bg rgb(243,244,246) + blur(8px) */
+main .cards-tiles > ul > li a:hover,
+main .cards-tiles > ul > li a:focus,
+main .cards-tiles > ul > li a.button:hover,
+main .cards-tiles > ul > li a.button:focus {
+  background-color: rgb(243 244 246);
+  backdrop-filter: blur(8px);
+  color: var(--link-color);
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* tablet: 2 columns */
+@media (width >= 600px) {
+  .cards-tiles > ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* desktop: 4 columns */
+@media (width >= 900px) {
+  .cards-tiles > ul {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

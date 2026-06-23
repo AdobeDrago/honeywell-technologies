@@ -1,0 +1,976 @@
+{
+  "templates": [
+    {
+      "name": "homepage",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/isa-otcs"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en",
+        "https://honeywellbt.stage.honeywell.com/us/en/home",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/hitec",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/isa-otcs",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/isa-otcs/thank-you",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/nfpa",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/niagara-summit"
+      ],
+      "description": "Homepage: hero, multiple carousels, cards grid, and feature sections"
+    },
+    {
+      "name": "landing-carousel-forms",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/careers",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/trust",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/inclusion-and-engagement",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/smart-cities",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/sustainability"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/careers",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/community",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/life-at-honeywell",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/locations",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/locations/germany",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/locations/india",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/locations/mexico",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/locations/romania",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/locations/saudi-arabia",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/locations/uk",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/locations/us",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/your-career-journey",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/your-career-journey/early-career",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/your-career-journey/military-veterans",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/your-career-journey/professionals",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/your-career-journey/trades-technicians",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/about-us",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/accelerator",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/buildings",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/inclusion-and-engagement",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/inclusion-and-engagement/accessibility",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/industrial",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/partners",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/process",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/sustainability",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/trust",
+        "https://honeywellbt.stage.honeywell.com/us/en/honeywell-forge",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/airports",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/airports/airside-operations",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/airports/terminal-landside",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/commercial-buildings",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/education",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/education/k-12-schools",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/government/justice-corrections",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/government/military",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/retail",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/smart-cities",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/chemicals-materials/chemical-production",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/data-centers",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/healthcare",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/healthcare/clinics-centers",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/healthcare/clinics-centers/academic-medical-centers",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/healthcare/clinics-centers/residential-care",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/healthcare/clinics-centers/specialty-clinics",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/heavy-industry",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/heavy-industry/industrial-equipment",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/heavy-industry/mining-metals",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/heavy-industry/mining-metals/base-metals",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/heavy-industry/mining-metals/cement",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/heavy-industry/mining-metals/critical-minerals",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/heavy-industry/mining-metals/green-steel-dri-steel",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/hospitality",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/hospitality/full-service",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/hospitality/luxury",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/life-sciences",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/life-sciences/biotechnology",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/life-sciences/medical-devices-and-diagnostics",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/lng",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/low-carbon-energy",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/aerospace-defense",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/battery-gigafactory",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/building-materials",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/discrete-oem",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/paper-sheet-manufacturing",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/emergency-services",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/gas-processing",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/gas-storage",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/marine",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/offshore-production",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/offshore-production-vessels-fpso-flng",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/onshore-production",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/petrochemicals",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/pipelines",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/terminals",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/utilities",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/utilities/electricity",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/utilities/gas",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/autonomous-operations",
+        "https://honeywellbt.stage.honeywell.com/us/en/news",
+        "https://honeywellbt.stage.honeywell.com/us/en/outcomes/energy-innovation",
+        "https://honeywellbt.stage.honeywell.com/us/en/outcomes/operational-efficiency",
+        "https://honeywellbt.stage.honeywell.com/us/en/outcomes/ot-cybersecurity",
+        "https://honeywellbt.stage.honeywell.com/us/en/outcomes/safety-security",
+        "https://honeywellbt.stage.honeywell.com/us/en/outcomes/workforce-excellence",
+        "https://honeywellbt.stage.honeywell.com/us/en/qa-test-pages/mkt-testing-general-backup-live-copies/andrei-s-test-folder/romania",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/access-control",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/adsorbents",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/building-management-software",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/building-services/remote-monitoring",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/connected-solutions",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/controllers",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/indoor-air-quality",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/integrated-operations",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/lighting-and-lighting-controls",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/networking",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-sensors/environmental",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-sensors/fire",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-sensors/flow-electrical",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-sensors/tools-accessories",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/energy-technologies",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/gas-process/regulators-and-accessories",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-control/drives",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-control/emissions-management",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-control/interfaces",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/aerospace-defense",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/battery-sensors",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/switches-controls",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/tools-accessories",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/measurement-and-control/gas-detection/fixed-gas-detection",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/measurement-and-control/terminal-solutions",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/security-access-solutions/access-control",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/security-access-solutions/intrusion-detection",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/security-access-solutions/services",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/thermal-solutions",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/thermal-solutions/fuel-air-delivery",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/utility-metering/water"
+      ],
+      "description": "Marketing landing page: hero with multiple carousels and embedded forms"
+    },
+    {
+      "name": "dual-hero-content",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/employee-login",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/risks-neglected-audits-and-assessments-warehouse-systems-age",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/memorandum-of-insurance"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/employee-login",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people/fai-al-sanea",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people/jose-anaya-lopez",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people/luis-ize-ludlow",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people/megan-kubacki",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people/prudence-hoffman",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/retiree-log-in",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/are-you-curious-about-how-your-lithium-ion-batteries-fail-we-can-help-ensure-you-are-safe",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/carbon-capture-and-storage-a-decade-of-experience",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/commercial-building-safety-and-security-are-you-return-ready",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/honeywell-guarantees-android-12-for-mobility-edge-platform",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/how-hospital-environments-could-potentially-impact-virus-risk",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/reasons-ot-cybersecurity-immediate-priority-in-life-sciences",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/risks-neglected-audits-and-assessments-warehouse-systems-age",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/secured-by-design-in-a-connected-world",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/the-top-hazards-during-a-turnaround-and-how-to-help-increase-safety",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/memorandum-of-insurance",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/terms-and-conditions",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2025/03/honeywell-advances-automation-and-remote-operability-for-utilities"
+      ],
+      "description": "Page with two stacked heroes followed by content sections"
+    },
+    {
+      "name": "columns-form-page",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/ot-cybersecurity-cyber-insights"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/customer-community-portal",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/ot-cybersecurity-cyber-insights"
+      ],
+      "description": "Hero, columns layout, stacked content, and a form"
+    },
+    {
+      "name": "profile-detail",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people/ajibola-fowowe",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/cookie-notice",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/leadership/mark-macaluso",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/access-control/pro-watch",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/access-control/web-based-access-control"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people/ajibola-fowowe",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people/alex-cui",
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/meet-our-people/casey-moore",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/leadership/mark-macaluso",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/leadership/peter-kropik",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/leadership/stacey-bernards",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/ikea-case-study",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/buildings/buildings-supplier-terms",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/certifications",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/cookie-notice",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/honeywell-affiliates",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/access-control/pro-watch",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/access-control/web-based-access-control",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/intrusion",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/temaline-series",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/video-surveillance/analog-system",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/video-surveillance/dvr-nvr-encoder",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/video-surveillance/his",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/video-surveillance/hosted-video-services",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/video-surveillance/ip-cameras",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/opensource/security/video-surveillance/system-and-system-accessories",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/privacy-statement"
+      ],
+      "description": "Person/profile page: carousel-led layout with single content block"
+    },
+    {
+      "name": "hero-tabs",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/remote-access",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/cyber-insights",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/ot-soc",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/history",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/success-stories/extending-the-lifecycle"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/careers/remote-access",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/history",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/integrity-and-compliance",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/cyber-insights",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/ot-soc",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/research/guides/real-world-ot-cybersecurity-findings-from-vulnerability-assessments",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/research/guides/real-world-ot-cybersecurity-findings-from-vulnerability-assessments/download",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/research/sharing-the-load",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/research/trends-report",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/success-stories/extending-the-lifecycle",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/success-stories/improved-performance-for-lng-air-compression",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/success-stories/modernizing-compressor-controls-on-time-and-on-target",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/webinar/fuels-of-the-future-webinar",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/webinar/on-demand-steam-turbine-controls",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/webinar/turbomachinery-advisor-honeywell-apm-on-demand",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/webinar/turbomachinery-ammonia-fertilizer-plants-on-demand",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/hps-sets-sales-terms-conditions",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/open-source"
+      ],
+      "description": "Hero followed by a tabbed content section"
+    },
+    {
+      "name": "section-index-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company"
+      ],
+      "description": "Minimal section index page with a single generic block"
+    },
+    {
+      "name": "awards-dual-hero",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company/about-us/awards"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company/about-us/awards"
+      ],
+      "description": "Two heroes followed by many stacked content sections"
+    },
+    {
+      "name": "empty-default-content",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company/impact-report"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company/impact-report"
+      ],
+      "description": "Page with only default content, no detected blocks"
+    },
+    {
+      "name": "leadership-listing",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company/leadership",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/supplier"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company/leadership",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/supplier"
+      ],
+      "description": "Hero followed by many stacked listing/content sections"
+    },
+    {
+      "name": "tabs-form-page",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/ot-cybersecurity-compliance"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/ot-cybersecurity-compliance"
+      ],
+      "description": "Stacked tabs sections with a form and content blocks"
+    },
+    {
+      "name": "carousel-stack",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/ot-cybersecurity-ot-threat-intelligence"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/ot-cybersecurity-ot-threat-intelligence",
+        "https://honeywellbt.stage.honeywell.com/us/en/company/ot-cybersecurity/ot-cybersecurity-services-consulting"
+      ],
+      "description": "Page built primarily from a stack of carousels"
+    },
+    {
+      "name": "basic-hero-content",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/error/404",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/lithium-ion-gigafactories"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/error/404",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/education/higher-education",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/government/law-enforcement",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/retail/multi-site",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/hospitality/limited-service",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/lng/liquefaction",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/lng/shipping",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/films-metals-coating-and-calendering",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/food-beverage",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/lithium-ion-gigafactories",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/refining",
+        "https://honeywellbt.stage.honeywell.com/us/en/outcomes/asset-management",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/building-services/maintenance-services",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/meters",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/thermostats-wall-modules",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/catalysts",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/connected-solutions",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/fire-life-safety/mass-notifications",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/fire-life-safety/station-alerting",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/environmental",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/flow",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/gas",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/motion-position",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/measurement-and-control/gas-detection/portable-gas-detection",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/security-access-solutions/video-management-cameras",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/thermal-solutions/burners-heat-exchangers",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/utility-metering/electricity"
+      ],
+      "description": "Simple page: hero plus a couple of generic content sections"
+    },
+    {
+      "name": "industries-index-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/industries"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/industries"
+      ],
+      "description": "Minimal industries index page with a single generic block"
+    },
+    {
+      "name": "industry-solution",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/government",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-control/plcs",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-wireless"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/government",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/buildings/government/emergency-services",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/healthcare/clinics-centers/outpatient-ambulatory-care-centers",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/healthcare/clinics-centers/post-acute-long-term-care",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/healthcare/hospitals",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/life-sciences/pharmaceutical",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/lng/regasification",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/lng/storage",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/automotive",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/glass",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/semiconductor",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/solar-cell",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/manufacturing/transportation",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/oil-gas/gas-distribution",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/utilities/power-generation",
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/utilities/water",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/building-services",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-management/field-devices",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/building-services",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/electrical-wiring/circuit-protection",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/energy-technologies/biofuels",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/energy-technologies/carbon-capture",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/energy-technologies/hydrogen",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/fire-life-safety/advanced-detection",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/fire-life-safety/fire-alarm-control-panels-devices",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/fire-life-safety/power-supplies-and-accessories",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/gas-detection",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/gas-process/distribution",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/gas-process/transmission",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-control/industrial-control-systems",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-control/plcs",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/health-biometric",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-wireless",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/measurement-and-control/field-process-instruments",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/measurement-and-control/gas-detection",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/measurement-and-control/gas-detection/high-tech-semiconductors",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/measurement-and-control/gas-measurement-solutions",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/measurement-and-control/marine-solutions",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/process-optimization",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/security-access-solutions/credentials-and-mobile-access",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/security-access-solutions/real-estate-access-management",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/thermal-solutions/burner-management-systems",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/thermal-solutions/combustion-solutions",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/utility-metering/gas"
+      ],
+      "description": "Industry/solution overview: hero, carousels, lead form, and accordion content"
+    },
+    {
+      "name": "solution-carousels-accordion",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/chemicals-materials",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/electricfication"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/industries/chemicals-materials",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/electrical-wiring/cable-management",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/electricfication",
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-sensors/pressure-force"
+      ],
+      "description": "Hero with several carousels and an accordion section"
+    },
+    {
+      "name": "long-form-article",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/11-veterans-share-the-value-of-military-experience",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-abdulla-alsaadi",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/06/honeywell-and-denso-collaborate-on-electric-propulsion-systems-for-urban-air-mobility"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/11-veterans-share-the-value-of-military-experience",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/carbon-capture-explained",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/honeywell-partners-with-charlotte-hornets",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-abdulla-alsaadi",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-alin-oachis",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-andrea-urueta",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-aru-narla",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-bidisha-das",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-james-carrapetta",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-neove-pipper",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-petr-gratz",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-soundari-arunachalam",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/top-ways-our-products-help-the-planet",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/what-makes-a-building-iconic",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/why-the-case-for-healthy-buildings-continue-to-grow",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/06/honeywell-and-denso-collaborate-on-electric-propulsion-systems-for-urban-air-mobility"
+      ],
+      "description": "Hero followed by many stacked rich-text content sections"
+    },
+    {
+      "name": "article-with-related-carousel",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/2024-trends-article-blog"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/2024-trends-article-blog",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/california-leadership-in-clean-energy",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/data-center-downtime-why-better-awareness-offers-more-than-redundancy",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/from-reactive-to-proactive-streamlining-maintenance-for-optimal-building-performance",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/honeywell-device-cleaning-and-disinfectin-guide-for-mobile-computers",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/lithium-ion-battery-gigafactories-fire-safety",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/the-state-of-advanced-air-mobility-and-technology-powering-future-flight"
+      ],
+      "description": "Hero, content sections, and a related-items carousel"
+    },
+    {
+      "name": "article-detail",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/3-ways-healthcare-organizations-can-prepare-for-new-cybersecurity-requirements",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/08/fan-courier-deploys-honeywell-mobile-computers-and-software-to-help-meet-unprecedented-delivery-demands",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2026/03/honeywell-announces-pricing-of-its-debt-tender-offers",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/honeywell-tops-electronics-industry-on-the-fortune-2019-worlds-most-admired-companies",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-chris-jones"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/3-ways-healthcare-organizations-can-prepare-for-new-cybersecurity-requirements",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/3-ways-smarter-airports-mean-better-travel",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/5-black-leaders-give-their-best-leadership-advice",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/6-spare-parts-mistakes-that-sabotage-peak-season",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/ai-role-in-energy-transformation-takeaways-from-anant-maheshwari",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/arc-flash-protection-guide-for-keeping-workers-safe",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/drone-challenges-and-how-to-solve-them",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/fight-the-surge",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/get-a-better-look-at-methane-leaks",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/honeywell-tops-electronics-industry-on-the-fortune-2019-worlds-most-admired-companies",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/how-digital-innovation-will-shape-the-future-of-5-industries",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/leading-innovation-honeywell-and-atlanta-based-engage-help-city-grow-as-an-innovation-hub",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/lenels2-introduces-onguard-security-management-system-version-8-1",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/liion-tamer-gen2-sensor-receives-california-fire-marshal-listing",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-chris-jones",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-mohit-singhai",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-nikki-mehta",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-prudence-hoffman",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-sandeep-gupta",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-an-engineer-innovating-for-the-future-of-energy-and-industry",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/off-gas-detection-system-receives-favorable-test-result",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/operation-of-a-two-shaft-gas-turbine-driven-synchronous-generator",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/our-esg-progress-by-the-numbers",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/retail-labor-shortage-the-need-for-technology",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/strategies-transform-life-sciences-manufacturing-workforce",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/sustainable-automation-for-hospitality",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/telehealth-changing-healthcare-landscape",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/the-impact-of-nis-2-directives-article-21",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/the-role-of-carbon-capture-technologies-in-decarbonizing-hard-to-abate-sectors",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/this-chemist-has-109-patents",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/this-emerging-technology-can-keep-screens-steady-in-an-always-moving-world",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/we-make-cool-things-in-cambridge-ontario-space-technology",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/what-is-a-futureshaper",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/what-is-digitalization-and-why-it-s-important",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/what-is-digitalization-and-why-its-important",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/01/honeywell-intel-to-jointly-develop-internet-of-things-solutions-for-retailers-and-logistics-providers",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/01/honeywell-launches-bluetooth-enabled-fixed-gas-detector-for-commercial-light-industrial-applications",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/01/safariland-uses-honeywell-spectra-shield-in-new-protective-vests-for-female-law-enforcement-officers",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/04/new-sensor-from-honeywell-helps-building-owners-and-consumers-monitor-air-quality",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/04/new-toxin-resistant-hood-from-honeywell-protects-firefighters-against-hazardous-substances",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/06/asiana-airlines-selects-honeywells-131-9a-auxiliary-power-units-for-multiple-aircraft",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/06/china-chengzhi-yongqing-to-use-honeywell-technology",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/06/honeywell-awards-three-scholarships",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/06/honeywell-powers-first-connected-helicopter-flight-around-the-world",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/06/honeywell-to-present-at-citi-2017-industrials-conference",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/06/kuwait-integrated-petroleum-industries-company",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/06/natural-gas-on-worlds-first-floating-lng-vessel",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/06/recognizes-outstanding-students-at-cairo-university",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/07/canada-kuwait-petrochemical-corp",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/07/canada-kuwait-petrochemical-corppt-chooses-honeywell-technology-for-new-complex-in-alberta",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/08/klm-looks-to-cut-annual-fuel-costs-by-5-percent-for-airline-and-cargo-with-honeywells-godirect-fuel-efficiency-software",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/10/honeywell-announces-private-exchange-offers-for-four-series-of-notes",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/10/honeywell-delivers-earnings-per-share-of-175-and-sales-of-101-billion",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/10/honeywell-engine-receives-certification-for-textron-aviations-cessna-citation-longitude",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/10/honeywell-garrett-to-display-turbocharged-lsx-powered-nissan",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/10/honeywell-to-present-at-baird-global-industrial-conference",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/10/honeywells-connected-aircraft-hardware-certified-to-bring-high-bandwidth-wi-fi-to-helicopters",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/11/hengli-petrochemical-to-use-honeywell-advanced-flare-and-burner-technologies-to-control-emissions",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/11/honeywell-to-announce-2018-outlook-and-hold-its-investor-conference-call-on-wednesday-december-13",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2017/11/honeywell-to-provide-cryogenic-gas-processing-plant-to-eagleclaw-midstream-ventures",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/01/honeywell-to-provide-third-cryogenic-gas-processing-plant",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/03/fire-lite-addressable-fire-alarm-control-panels",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/03/honeywell-spectra-shield-material-helps-reduce-weight-of-ballistic-handheld-shields-by-as-much-as-20-percent",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/03/new-honeywell-wearable-device-helps-supply-chain-workers",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/06/connected-worker-honeywell-improves-safety-performance-by-making-it-fast-and-easy-to-connect-portable-multi-gas-detectors",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/06/honeywell-launches-connected-plant-solution-for-easy-health-monitoring-of-midstream-gas-metering-systems",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/06/honeywell-to-release-second-quarter-financial-results-and-hold-its-investor-conference-call-on-friday-july-20",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/06/new-connected-gas-detector-from-honeywell-listens-for-gas-leaks-helping-protect-against-deadly-toxic-and-explosive-leaks-in-industrial-operations",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/06/new-honeywell-connected-aircraft-report-reveals-airline-industry-on-the-cusp-of-major-investment-wave",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/06/shandong-wonfull-petrochemical-to-produce-on-purpose-propylene-with-honeywell-technology",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/06/sidpec-chooses-honeywell-propylene-technology-for-new-complex-in-egypt",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/07/bendixking-announces-subscription-plans-for-its-avionics-equipment",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/07/honeywell-awarded-exclusive-maintenance-contracts-for-allegiant-airs-power-and-avionics-systems",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/07/honeywell-brings-military-precision-navigation-capabilities-to-commercial-markets",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/09/garrett-motion-incpt-to-host-investor-conference-in-new-york-city",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/09/honeywell-mobile-computers-validated-for-google-led-android-enterprise-recommended-program",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/09/honeywell-to-present-at-vertical-research-partners-2018-global-industrials-conference",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/10/honeywell-business-jet-aviation-forecast-projects-7700-new-aircraft-deliveries-valued-at-251-billion",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/10/honeywell-introduces-new-slim-2d-scan-engines-to-improve-mobile-device-performance",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/10/honeywell-partners-with-fetch-robotics-to-deliver-autonomous-mobile-robots-to-distribution-centers",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/10/honeywell-to-present-at-baird-2018-global-industrial-conference",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/10/new-honeywell-connected-aircraft-software-tool-simplifies-flight-planning",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/11/honeywell-announces-move-of-global-headquarters-to-charlotte",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/11/honeywell-named-a-global-reseller-of-inmarsats-gx-aviation-in-flight-broadband-solution",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/11/wanhua-to-use-honeywell-connected-plant",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/12/honeywell-statement-on-us-mexico-canada-agreement",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2018/12/swissport-international-to-improve-ground-operations-at-airports-with-honeywell-connected-service",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/01/honeywell-and-pipistrel-collaborate-on-aircraft-technologies-for-urban-air-mobility",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/01/honeywell-uop-wards-scholarships",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/02/honeywell-announces-quarterly-dividend",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/02/honeywell-to-present-at-barclays-industrial-select-conference-2019",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/04/honeywell-and-ncs4-collaborate-to-protect-schools-against-threats-through-security-analytics",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/05/honeywell-takes-legal-action-against-opticon-claiming-patent-in",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/06/honeywell-unveils-compact-fly-by-wire-system-for-urban-air-vehic",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/07/honeywell-launches-new-independent-software-vendor-partner-progr",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/07/new-honeywell-software-transforms-field-operations-for-workers",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/09/honeywell-unveils-new-software-platform-to-simplify-strengthen-and-scale-industrial-cybersecurity",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/10/honeywell-names-mike-madsen-to-lead-aerospace-business-group-tim-mahoney-to-drive-enterprise-transformation-jeff-kimbell-joins-company-as-chief-commercial-officer",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/11/dayuewan-zhuhai-petrochemical",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/11/honeywell-to-host-honeywell-building-technologies-investor-showcase",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2019/12/honeywell-itrace-and-securemarking-combat-counterfeit-activity-in-aerospace-with-blockchain",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/02/honeywell-to-launch-leadership-webcast-series-for-investors-first-webcast-will-feature-honeywell-aerospace-president-and-ceo-mike-madsen",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/02/honeywell-to-present-at-barclays-industrial-select-conference-2020",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/05/honeywell-delivers-margin-expansion-of-over-140-basis-points-and-earnings-per-share-of-2-21-up-15",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/07/cairn-oil-and-gas-deploys-honeywell-forge-to-improve-efficiency",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/07/honeywell-mobile-healthcare-solution-receives-major-electronic-healthcare-record-provider-validation",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/07/honeywell-opens-new-t55-engine-maintenance-center-in-phoenix",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/09/honeywell-to-increase-dividend-effective-in-fourth-quarter-2020",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/09/uzbekneftegaz-to-modernize-refinery-with-honeywell-uop",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/10/honeywell-enhances-search-and-rescue-and-asset-tracking-software",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/10/honeywell-secures-repair-and-overhaul-contract-for-us-army-chinook-fleet",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2020/11/honeywell-to-present-at-credit-suisse-8th-annual-virtual-industrials-conference",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/02/honeywell-announces-quarterly-dividend",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/02/honeywell-building-technologies-launches-next-generation-digital-tools-to-meet-evolving-customer-needs",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/03/honeywell-expands-supply-chain-software-suite-to-help-enterprises-better-track-and-monitor-operations",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/03/honeywell-named-to-fast-company-s-annual-list-of-the-world-s-most-innovative-companies-for-2021",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/03/lukoil-to-expand-kstovo-refinery-with-honeywell-technology",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/03/update-on-honeywell-it-system",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/04/honeywell-renewable-fuels-technology-chosen-for-first-advanced-biofuels-plant-in-paraguay-for-ecb-group",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/05/peruvian-navy-selects-honeywell-next-generation-tracking-technology-to-coordinate-search-rescue-operations",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/06/honeywell-partners-with-drdo-and-csir-iip-government-of-india",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/08/fan-courier-deploys-honeywell-mobile-computers-and-software-to-help-meet-unprecedented-delivery-demands",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/08/new-honeywell-technology-for-light-drones-increases-range-threefold-with-cleaner-quieter-hydrogen-fuel-cells",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/10/honeywell-forecast-shows-quick-rebound-for-business-aviation-as-flight-hours-purchase-plans-grow",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/10/honeywell-to-release-third-quarter-financial-results-and-hold-its-investor-conference-call-on-friday-october-22",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/10/honeywells-healthy-buildings-experts-recommend-strategies-to-improve-indoor-air-quality-in-reopened-schools",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/11/honeywell-expands-navitas-software-suite-to-enhance-airport-operations",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2021/11/honeywell-introduces-revolutionary-plastics-recycling-technology-to-drive-a-circular-plastics-economy",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/01/87-of-workers-have-heightened-concerns-about-working-in-an-office-with-the-rise-of-new-covid-19-variants-honeywell-survey-finds",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/01/americas-largest-plastics-recycler-will-use-honeywells-advanced-plastics-recycling-technology",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/02/honeywell-introduces-new-technology-to-produce-key-feedstock-for-plastics",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/02/totalenergies-and-honeywell-sign-a-strategic-agreement-to-promote-the-development-of-advanced-plastic-recycling",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/06/honeywells-legendary-boeing-757-test-aircraft-turns-40-years-old",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/07/honeywell-names-vimal-kapur-president-and-chief-operating-office",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/07/honeywell-to-present-at-jefferies-industrials-conference",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/08/global-hair-care-brand-fekkai-selects-honeywell-solstice-propellant-to-power-two-new-hair-sprays-and-a-dry-shampoo",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/09/honeywell-to-collaborate-with-leading-health-providers-to-advance-digitalization-of-healthcare-globally",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/10/honeywell-technology-provides-tractor-supply-with-industry-leading-end-to-end-team-member-and-customer-experiences",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2022/11/honeywell-mobile-payment-solution-helps-merchants-meet-customer-needs-anywhere-anytime",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2023/03/honeywell-showcases-latest-security-fire-and-life-safety-technologies-at-isc-west-2023",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2023/06/honeywell-technology-to-help-improve-gate-safety-at-napoli-international-airport",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2023/06/honeywell-upgrade-for-aircraft-auxiliary-power-unit-lowers-fuel-consumption-and-co2-emissions",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2023/08/anant-maheshwari-named-honeywell-high-growth-region-president-and-ceo",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2023/09/honeywell-leverages-quantum-computing-encryption-keys-to-bolster-utilities-data-security-against-cyber-threats",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2023/10/honeywell-forecast-shows-strong-demand-for-new-business-jets-increased-focus-on-reducing-emissions",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2023/11/honeywell-s-advanced-air-mobility-business-reaches-10-billion-in-wins-to-help-build-the-future-of-sustainable-flight",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2024/02/honeywell-announces-fourth-quarter-and-full-year-2023-results-issues-2024-guidance",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2024/02/honeywell-elects-vimal-kapur-as-chairman-and-william-s-ayer-as-independent-lead-director",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2024/06/honeywell-completes-acquisition-of-carrier-s-global-access-solutions-business-and-updates-2024-outlook",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2024/08/honeywell-announces-participation-at-upcoming-investor-conferences",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2024/08/honeywell-introduces-end-to-end-emissions-monitoring-solution",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2024/09/honeywell-and-samsung-e-and-a-plan-collaboration-to-help-reduce-power-plant-emissions",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2025/03/air-taxis-poised-for-mass-adoption-as-honeywell-survey-highlights-consumer-interest",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2025/04/honeywell-annual-shareowners-meeting-set-for-may-20-2025",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2025/05/lupin-and-honeywell-move-forward-jointly-with-plans-for-hfo-technology-in-inhalers",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2025/06/honeywell-and-near-earth-autonomy-complete-first-autonomous-flight-of-leonardo-aw139-helicopter",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2025/06/statement-about-honeywell-and-dsm-firmenich",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2025/08/honeywell-acquires-sparkmeter-s-data-platform-and-software-technologies-to-strengthen-its-portfolio-of-utility-solutions",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2025/10/honeywell-and-ls-electric-announce-global-partnership-to-accelerate-innovation-for-data-centers-and-battery-energy-storage-systems",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2026/03/honeywell-announces-pricing-of-its-debt-tender-offers",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2026/03/honeywell-annual-shareowners-meeting-set-for-may-22-2026",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2026/03/honeywell-unveils-commercial-launch-of-ai-powered-control-room-assistant-following-successful-pilot",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2026/04/honeywell-announces-participation-at-wolfe-research-global-transportation-and-industrials-conference",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2026/04/honeywell-introduces-new-warehouse-software-platform-and-innovative-sortation-solution",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2026/05/honeywell-and-national-hockey-league-partner-to-drive-a-new-era-of-intelligent-digitally-enabled-venues",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2026/06/honeywell-aerospace-to-host-inaugural-investor-day",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2026/06/honeywell-board-of-directors-sets-record-date-and-announces-expected-timing-for-spin-off-of-honeywell-aerospace-and-honeywell-reverse-stock-split",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/2026/06/honeywell-unveils-new-brands-effective-post-spin-off-honeywell-technologies-and-honeywell-aerospace",
+        "https://honeywellbt.stage.honeywell.com/us/en/news/press-releases/elevating-the-guest-experience"
+      ],
+      "description": "Article/press-release detail page: hero followed by stacked rich-text content sections"
+    },
+    {
+      "name": "article-content-carousel",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/bms-101"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/bms-101",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/honeywell-expands-licensing-agreement-to-support-energy-transition-with-new-flare-technologies"
+      ],
+      "description": "Hero, content sections, and a carousel"
+    },
+    {
+      "name": "article-dual-hero-carousel",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/cloud-security-trends"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/cloud-security-trends",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/healthy-buildings-foundation",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/how-to-counter-ai-and-cybersecurity-threats",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/three-takeaways-from-himss-2023"
+      ],
+      "description": "Article with two heroes and a carousel section"
+    },
+    {
+      "name": "article-with-carousel",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/ct47-multi-purpose-mobile-computer-for-supply-chain",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/gitex-2024-takeaways",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-mythili-belle"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/ct47-multi-purpose-mobile-computer-for-supply-chain",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/evaluating-voice-versus-paper-based-rf-scanners-and-pick-to-light-solutions",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/gitex-2024-takeaways",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/indoor-air-quality-is-an-invisible-crisis",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/meet-a-futureshaper-mythili-belle",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/mems-transforming-healthcare-and-industrial-landscapes",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/navitas-blog",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/articles/safeguarding-your-safety-technology"
+      ],
+      "description": "Hero, content, and an inline carousel"
+    },
+    {
+      "name": "customer-story",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/25-york-street",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/copenhagen-energy"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/25-york-street",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/copenhagen-energy",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/edison-properties",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/harris-county",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/indira-gandhi-international-airport-igia-new-delhi",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/moxy-belgrade",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/qatar-stadiums",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/washington-hilton",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/webinar/maxpro-access-control-next-generation-access-control",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/webinar/ndaa-compliant-video-solutions",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/webinar/ndaa-section-889-compliant-video-solutions"
+      ],
+      "description": "Customer story: hero with two content sections"
+    },
+    {
+      "name": "story-hero-content",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/advancing-offshore-platform-security"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/advancing-offshore-platform-security",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/from-surge-struggles-to-steady-performance",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/performance-optimization-of-a-charge-gas-compressor",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/customer-stories/petrochemical-plant-retrofit-project",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/publications/omdia-ebook",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/research/saf-whitepaper",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/white-papers/omdia-universe-operational-technology-cybersecurity-services",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/white-papers/transformative-naphtha-to-ethane-propane-nep"
+      ],
+      "description": "Hero with a single content section"
+    },
+    {
+      "name": "events-index-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026"
+      ],
+      "description": "Minimal events index page with a single generic block"
+    },
+    {
+      "name": "event-detail",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/adipec"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/adipec",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/enlit",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/gastech",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/gitex",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/gsx"
+      ],
+      "description": "Event page: hero, carousel, and content section"
+    },
+    {
+      "name": "publication-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/publications/omdia-infographic"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/publications/omdia-infographic"
+      ],
+      "description": "Minimal publication page with a single generic block"
+    },
+    {
+      "name": "research-detail",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/research/ccc-partners-with-yokogawa"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/research/ccc-partners-with-yokogawa",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/research/control-and-safety-for-turbomachinery",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/research/control-for-cryogenic-turboexpanders",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/research/improve-operations-with-a-steam-turbine-mechanical-retrofit"
+      ],
+      "description": "Research item: hero with single content section"
+    },
+    {
+      "name": "interactive-tool-embed",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/tools/energy-calculator"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/tools/energy-calculator"
+      ],
+      "description": "Embedded interactive tool with content"
+    },
+    {
+      "name": "tool-carousels",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/tools/green-hydrogen/concept-design-optimizer"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/tools/green-hydrogen/concept-design-optimizer"
+      ],
+      "description": "Interactive tool page built from carousels"
+    },
+    {
+      "name": "tool-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/tools/tool-6"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/tools/tool-6"
+      ],
+      "description": "Minimal tool page with a single generic block"
+    },
+    {
+      "name": "videos-index-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos"
+      ],
+      "description": "Minimal videos index page with a single generic block"
+    },
+    {
+      "name": "video-detail",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/ai-breakthroughs-future"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/ai-breakthroughs-future",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/artemis-2022",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/carbon-capture-future",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/futureshaper-sustainability-challenge-2023",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/gitex-2024-day-4",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/global-supply-chain-future",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/honeywell-uop-conneted-competency",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/monat-case-study",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/nis-2-directive",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/one-bangkok-case-study",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/promat-2025-executive-leadership",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/renewable-fuel-green-diesel",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/spokane-semiconductor-industry",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/sustainable-pharma-barrier-packaging",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/unity-hydroprocessing",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/we-make-cool-things-juarez-mexico",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/we-make-cool-things-lugoj-romania"
+      ],
+      "description": "Video page: embedded media player with supporting content"
+    },
+    {
+      "name": "video-case-study",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/honeywell-petronas-industrials-case-study"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/honeywell-petronas-industrials-case-study",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/videos/operational-technology-cybersecurity"
+      ],
+      "description": "Embedded video with supporting content"
+    },
+    {
+      "name": "whitepaper-hero-content",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/white-papers/eco-friendly-solutions-for-a-coffee-culture"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/white-papers/eco-friendly-solutions-for-a-coffee-culture"
+      ],
+      "description": "Whitepaper page: hero with single content section"
+    },
+    {
+      "name": "legal-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/product-privacy"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/product-privacy"
+      ],
+      "description": "Minimal legal page with a single generic block"
+    },
+    {
+      "name": "legal-quality-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/quality-and-safety"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/quality-and-safety"
+      ],
+      "description": "Minimal legal quality/safety page with a single generic block"
+    },
+    {
+      "name": "search-results-page",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/supplier-code-of-business-conduct"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/supplier-code-of-business-conduct"
+      ],
+      "description": "Hero followed by a long stack of search result blocks"
+    },
+    {
+      "name": "legal-hero-content",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/warranties",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/warranties/fire-warranties"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/warranties",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/warranties/fire-warranties",
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/warranties/security-warranties"
+      ],
+      "description": "Legal page: hero with single content section"
+    },
+    {
+      "name": "warranty-tables",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/warranties/bms-warranties",
+        "https://honeywellbt.stage.honeywell.com/us/en/lp/newfocus"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/warranties/bms-warranties",
+        "https://honeywellbt.stage.honeywell.com/us/en/lp/newfocus"
+      ],
+      "description": "Page of data tables followed by an accordion"
+    },
+    {
+      "name": "privacy-policy-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/washington-consumer-health-data-privacy-policy"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/legal/washington-consumer-health-data-privacy-policy"
+      ],
+      "description": "Minimal privacy policy page with a single generic block"
+    },
+    {
+      "name": "search-test-page",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/qa-test-pages/test-page/test-search-stage"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/qa-test-pages/test-page/test-search-stage"
+      ],
+      "description": "Page composed of search blocks"
+    },
+    {
+      "name": "service-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/gas-process/services"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/gas-process/services"
+      ],
+      "description": "Minimal service page with a single generic block"
+    },
+    {
+      "name": "product-minimal",
+      "representativePages": [
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-control/modular-rtu"
+      ],
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en/solutions/industrial-control/modular-rtu"
+      ],
+      "description": "Minimal product page with a single generic block"
+    }
+  ]
+}

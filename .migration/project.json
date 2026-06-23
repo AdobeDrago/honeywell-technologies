@@ -1,0 +1,11 @@
+{
+  "sites": {
+    "honeywell-technologies": {
+      "previewOrg": "adobedrago",
+      "previewSite": "honeywell-technologies",
+      "contentHostUrl": "https://content.da.live/adobedrago/honeywell-technologies/",
+      "libraryUrl": "https://main--sta-boilerplate--aemdemos.aem.page/tools/sidekick/library.json"
+    }
+  },
+  "type": "da"
+}

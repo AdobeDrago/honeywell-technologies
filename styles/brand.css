@@ -1,0 +1,19 @@
+:root {
+  --heading-font-family: "Roobert", "Helvetica Neue", helvetica, arial, sans-serif;
+  --body-font-family: "Roobert", "Helvetica Neue", arial, sans-serif;
+  --background-color: rgb(255 255 255);
+  --text-color: rgb(33 37 41);
+  --link-color: rgb(17 25 39);
+  --link-hover-color: rgb(0 86 179);
+  --section-padding: 24px;
+  --content-max-width: 1280px;
+  --nav-height: 80px;
+  --heading-size-xxl: 60px;
+  --heading-size-xl: 36px;
+  --heading-size-l: 28px;
+  --heading-size-m: 20px;
+  --heading-size-s: 18px;
+  --heading-size-xs: 16px;
+  --dark-bg-color: rgb(20 20 20);
+  --light-bg-color: rgb(245 245 245);
+}

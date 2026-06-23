@@ -1,0 +1,266 @@
+/*
+ * Block: carousel-solutions ("Outcomes" horizontal card carousel)
+ * Values extracted from source computed styles (honeywellbt.stage.honeywell.com/us/en).
+ * Source design: leading dark/gradient CTA card + N image cards, slide counter (01/07) + prev/next arrows.
+ */
+
+.carousel-solutions {
+  --carousel-card-width: 280px;
+  --carousel-card-height: 560px;
+  --carousel-card-gap: 12px;
+
+  position: relative;
+  background-color: var(--background-color);
+}
+
+/* track container */
+.carousel-solutions .carousel-solutions-slides-container {
+  position: relative;
+}
+
+.carousel-solutions .carousel-solutions-slides {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: var(--carousel-card-gap);
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+}
+
+.carousel-solutions .carousel-solutions-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* a single card */
+.carousel-solutions .carousel-solutions-slide {
+  flex: 0 0 var(--carousel-card-width);
+  width: var(--carousel-card-width);
+  height: var(--carousel-card-height);
+  scroll-snap-align: start;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background-color: rgb(249 250 251);
+}
+
+/* image area (top of card) -- source: 400x480 => 5:6 ratio */
+.carousel-solutions .carousel-solutions-slide-image {
+  flex: 0 0 auto;
+  width: 100%;
+  aspect-ratio: 5 / 6;
+  overflow: hidden;
+}
+
+.carousel-solutions .carousel-solutions-slide-image img,
+.carousel-solutions .carousel-solutions-slide-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* text panel (bottom of card) -- source: bg rgb(249,250,251), padding 40px, gap 10px */
+.carousel-solutions .carousel-solutions-slide-content {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 24px;
+  background-color: rgb(249 250 251);
+  color: rgb(0 0 0);
+}
+
+.carousel-solutions .carousel-solutions-slide-content p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 30px;
+  color: rgb(0 0 0);
+}
+
+/* card title comes through as <p class="button-container"><a class="button"> --
+   reset EDS button auto-decoration; source h3 30/500/lh38 black */
+.carousel-solutions .carousel-solutions-slide-content p:first-child,
+.carousel-solutions .carousel-solutions-slide-content p.button-container {
+  margin: 0;
+  text-align: left;
+}
+
+.carousel-solutions .carousel-solutions-slide-content p:first-child a:any-link,
+.carousel-solutions .carousel-solutions-slide-content a.button:any-link {
+  display: inline;
+  max-width: none;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  font-family: var(--heading-font-family);
+  font-size: 30px;
+  font-weight: 500;
+  line-height: 38px;
+  text-align: left;
+  text-decoration: none;
+  white-space: normal;
+  text-overflow: clip;
+  color: rgb(0 0 0);
+}
+
+.carousel-solutions .carousel-solutions-slide-content a.button:any-link:hover,
+.carousel-solutions .carousel-solutions-slide-content a.button:any-link:focus {
+  background-color: transparent;
+  color: var(--link-hover-color);
+}
+
+/* leading CTA / intro card -- dark with red->purple gradient, white text */
+.carousel-solutions .carousel-solutions-slide.carousel-solutions-cta {
+  background-color: rgb(26 26 26);
+  background-image: linear-gradient(135deg, #e30613 0%, #d11a4f 40%, #7b2ff7 100%);
+}
+
+.carousel-solutions .carousel-solutions-slide.carousel-solutions-cta .carousel-solutions-slide-image {
+  display: none;
+}
+
+.carousel-solutions .carousel-solutions-slide.carousel-solutions-cta .carousel-solutions-slide-content {
+  flex: 1 1 auto;
+  justify-content: flex-start;
+  gap: 16px;
+  padding: 40px 32px;
+  background-color: transparent;
+  color: #fff;
+}
+
+/* eyebrow (first <p>) -- source 16/400 white */
+.carousel-solutions .carousel-solutions-slide.carousel-solutions-cta .carousel-solutions-slide-content p:first-child {
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: #fff;
+}
+
+/* intro title -- source h2 48/300/lh60 white */
+.carousel-solutions .carousel-solutions-slide.carousel-solutions-cta .carousel-solutions-slide-content h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.25;
+  letter-spacing: normal;
+  color: #fff;
+}
+
+/* footer row: counter (left) + arrows (right) -- source padding 0 4px, height 40px */
+.carousel-solutions .carousel-solutions-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 4px;
+  margin-top: 24px;
+}
+
+/* slide counter "01 / 07" -- source 24/400 rgb(26,26,26) */
+.carousel-solutions .carousel-solutions-counter {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-family: var(--body-font-family);
+  font-size: 24px;
+  font-weight: 400;
+  color: rgb(26 26 26);
+}
+
+.carousel-solutions .carousel-solutions-counter .carousel-solutions-counter-total {
+  color: rgb(26 26 26 / 40%);
+}
+
+/* nav arrow buttons -- source 40x40 transparent, no border, color rgb(26,26,26), gap 16px */
+.carousel-solutions .carousel-solutions-navigation-buttons {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.carousel-solutions .carousel-solutions-navigation-buttons button {
+  width: 40px;
+  height: 40px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: rgb(26 26 26);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-solutions .carousel-solutions-navigation-buttons button:hover,
+.carousel-solutions .carousel-solutions-navigation-buttons button:focus {
+  background-color: transparent;
+}
+
+.carousel-solutions .carousel-solutions-navigation-buttons button:disabled,
+.carousel-solutions .carousel-solutions-navigation-buttons button:disabled:hover {
+  background-color: transparent;
+  opacity: 0.3;
+  cursor: default;
+}
+
+/* chevron arrows drawn with borders */
+.carousel-solutions .carousel-solutions-navigation-buttons button::after {
+  content: '';
+  display: block;
+  width: 12px;
+  height: 12px;
+  border: 2px solid currentcolor;
+  border-bottom: 0;
+  border-left: 0;
+}
+
+.carousel-solutions .carousel-solutions-navigation-buttons button.slide-prev::after {
+  transform: translateX(2px) rotate(-135deg);
+}
+
+.carousel-solutions .carousel-solutions-navigation-buttons button.slide-next::after {
+  transform: translateX(-2px) rotate(45deg);
+}
+
+/* hide the default dot indicators -- replaced by counter */
+.carousel-solutions .carousel-solutions-slide-indicators,
+.carousel-solutions nav[aria-label] > .carousel-solutions-slide-indicators {
+  display: none;
+}
+
+@media (width >= 900px) {
+  .carousel-solutions {
+    --carousel-card-width: 400px;
+    --carousel-card-height: 720px;
+  }
+
+  .carousel-solutions .carousel-solutions-slide-content {
+    padding: 40px;
+  }
+
+  /* leading CTA card is wider on desktop -- source width 540px */
+  .carousel-solutions .carousel-solutions-slide.carousel-solutions-cta {
+    flex: 0 0 540px;
+    width: 540px;
+  }
+
+  .carousel-solutions .carousel-solutions-slide.carousel-solutions-cta .carousel-solutions-slide-content {
+    padding: 80px 40px;
+  }
+
+  .carousel-solutions .carousel-solutions-slide.carousel-solutions-cta .carousel-solutions-slide-content h2 {
+    font-size: 48px;
+    line-height: 60px;
+  }
+}

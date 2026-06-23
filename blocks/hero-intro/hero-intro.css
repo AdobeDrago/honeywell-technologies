@@ -1,0 +1,64 @@
+/* hero-intro -- homepage top hero (intro heading + paragraph)
+ * Values extracted from source computed styles (honeywellbt.stage.honeywell.com). */
+
+/* Full-width: override the section wrapper max-width/padding */
+.hero-intro-container .hero-intro-wrapper {
+  max-width: unset;
+  padding: 0;
+}
+
+/* Intro container (.editorial-box-b on source): white card */
+.hero-intro {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  padding: 40px 24px;
+  min-height: 400px;
+}
+
+.hero-intro > div > div {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Heading (.cmp-secondary-hero__heading): 60px / 72px, weight 300, near-black */
+.hero-intro h1 {
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xxl);
+  font-weight: 300;
+  line-height: 1.1;
+  letter-spacing: normal;
+  color: rgb(0 0 0);
+  margin: 12px 0 0;
+}
+
+/* Intro paragraph (.description): 16px / 24px, weight 300 */
+.hero-intro p {
+  font-family: var(--body-font-family);
+  font-size: var(--body-font-size-s);
+  font-weight: 300;
+  line-height: 1.5;
+  color: var(--text-color);
+  margin: 24px 0 16px;
+}
+
+/* No-image variant keeps body text colors (no override needed here,
+   colors are already set above for the white-background design). */
+
+@media (width >= 900px) {
+  .hero-intro {
+    padding: 80px;
+  }
+
+  .hero-intro h1 {
+    font-size: 60px;
+    line-height: 72px;
+    max-width: 700px;
+  }
+
+  .hero-intro p {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 520px;
+  }
+}

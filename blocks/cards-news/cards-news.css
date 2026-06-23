@@ -1,0 +1,74 @@
+/* cards-news -- "Insights & News" article grid
+   Design extracted from source div.business-grid computed styles. */
+
+.cards-news > ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+}
+
+.cards-news > ul > li {
+  display: flex;
+  flex-direction: column;
+  background-color: transparent;
+  border: 0;
+}
+
+/* image -- portrait crop (411x474 ~ 0.866) with hover zoom */
+.cards-news .cards-news-card-image {
+  overflow: hidden;
+  line-height: 0;
+}
+
+.cards-news .cards-news-card-image img {
+  width: 100%;
+  aspect-ratio: 411 / 474;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.cards-news > ul > li:hover .cards-news-card-image img,
+.cards-news > ul > li:focus-within .cards-news-card-image img {
+  transform: scale(1.05);
+}
+
+/* card body */
+.cards-news .cards-news-card-body {
+  margin: 0;
+}
+
+/* title */
+.cards-news .cards-news-card-body h3 {
+  margin: 0;
+  padding: 8px 0 0;
+  font-family: var(--heading-font-family);
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: normal;
+  color: rgb(56 66 80);
+}
+
+.cards-news .cards-news-card-body h3 a:any-link {
+  color: rgb(56 66 80);
+  text-decoration: none;
+}
+
+/* description */
+.cards-news .cards-news-card-body p {
+  margin: 8px 0 0;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgb(56 66 80);
+}
+
+@media (width >= 900px) {
+  .cards-news > ul {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 32px;
+  }
+}

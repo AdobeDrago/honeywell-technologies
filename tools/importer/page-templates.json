@@ -1,0 +1,144 @@
+{
+  "metadata": {
+    "projectType": "da"
+  },
+  "templates": [
+    {
+      "name": "homepage",
+      "urls": [
+        "https://honeywellbt.stage.honeywell.com/us/en",
+        "https://honeywellbt.stage.honeywell.com/us/en/home",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/hitec",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/isa-otcs",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/isa-otcs/thank-you",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/nfpa",
+        "https://honeywellbt.stage.honeywell.com/us/en/insights/events/2026/niagara-summit"
+      ],
+      "representativeUrl": "https://honeywellbt.stage.honeywell.com/us/en",
+      "coverageGaps": [],
+      "description": "Homepage template: hero, storytelling carousel, industry tile grid, solutions carousel, full-width image carousel, insights/news grid, and promo banner CTA",
+      "blocks": [
+        {
+          "name": "hero-intro",
+          "instances": [
+            "div.hero.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "carousel-story",
+          "instances": [
+            "div.storytelling.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "cards-tiles",
+          "instances": [
+            "div.industry-grid.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "carousel-solutions",
+          "instances": [
+            "div.solutions-carousel.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "carousel-stories",
+          "instances": [
+            "div.full-width-image-carousel.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "cards-news",
+          "instances": [
+            "div.business-grid.aem-GridColumn"
+          ]
+        },
+        {
+          "name": "hero-promo",
+          "instances": [
+            "div.promobanner.aem-GridColumn"
+          ]
+        }
+      ],
+      "sections": [
+        {
+          "id": "hero",
+          "name": "Hero Intro",
+          "selector": "div.hero.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "hero-intro"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "storytelling",
+          "name": "Storytelling Carousel",
+          "selector": "div.storytelling.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "carousel-story"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "industry-grid",
+          "name": "Industries Grid",
+          "selector": "div.industry-grid.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "cards-tiles"
+          ],
+          "defaultContent": [
+            "div.cmp-tile-grid__header"
+          ]
+        },
+        {
+          "id": "solutions-carousel",
+          "name": "Solutions Carousel",
+          "selector": "div.solutions-carousel.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "carousel-solutions"
+          ],
+          "defaultContent": []
+        },
+        {
+          "id": "full-width-image-carousel",
+          "name": "Customer Stories Carousel",
+          "selector": "div.full-width-image-carousel.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "carousel-stories"
+          ],
+          "defaultContent": [
+            "div.carousel__header"
+          ]
+        },
+        {
+          "id": "business-grid",
+          "name": "Insights and News Grid",
+          "selector": "div.business-grid.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "cards-news"
+          ],
+          "defaultContent": [
+            "div.business-grid__header"
+          ]
+        },
+        {
+          "id": "promobanner",
+          "name": "Promo Banner CTA",
+          "selector": "div.promobanner.aem-GridColumn",
+          "style": null,
+          "blocks": [
+            "hero-promo"
+          ],
+          "defaultContent": []
+        }
+      ]
+    }
+  ]
+}

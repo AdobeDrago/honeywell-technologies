@@ -1,0 +1,249 @@
+/* Block: carousel-stories — Customer Stories full-width image + text carousel
+ * Values extracted from source computed styles (honeywellbt.stage.honeywell.com/us/en)
+ * Source structure per slide: 50/50 split — image (left) + content panel (right) on light bg.
+ */
+
+.carousel-stories {
+  position: relative;
+  background-color: rgb(247 247 247);
+}
+
+.carousel-stories .carousel-stories-slides-container {
+  position: relative;
+}
+
+.carousel-stories .carousel-stories-slides,
+.carousel-stories .carousel-stories-slide-indicators {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.carousel-stories .carousel-stories-slides {
+  display: flex;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow: scroll clip;
+}
+
+.carousel-stories .carousel-stories-slides::-webkit-scrollbar {
+  display: none;
+}
+
+/* --- Slide: stacked on mobile, 50/50 split on desktop --- */
+.carousel-stories .carousel-stories-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 100%;
+}
+
+.carousel-stories .carousel-stories-slide-image,
+.carousel-stories .carousel-stories-slide-content {
+  box-sizing: border-box;
+}
+
+/* --- Image (left half on desktop) --- */
+.carousel-stories .carousel-stories-slide-image {
+  position: relative;
+  width: 100%;
+  margin: 0;
+}
+
+.carousel-stories .carousel-stories-slide-image picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.carousel-stories .carousel-stories-slide-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* --- Content panel (right half on desktop) on light gray bg --- */
+.carousel-stories .carousel-stories-slide-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 100%;
+  padding: 32px 24px 40px;
+  background-color: rgb(247 247 247);
+  color: var(--text-color);
+}
+
+.carousel-stories .carousel-stories-slide-content h2 {
+  margin: 0;
+  font-family: var(--heading-font-family);
+  font-size: var(--heading-font-size-xl);
+  font-weight: 400;
+  line-height: 1.23;
+  color: var(--text-color);
+  letter-spacing: normal;
+}
+
+.carousel-stories .carousel-stories-slide-content p {
+  margin: 16px 0 0;
+  font-size: 20px;
+  line-height: 1.5;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+/* "View Customer Story" — plain text link with arrow, NOT a pill button.
+ * Reset EDS auto-decorated .button / .button-container. */
+.carousel-stories .carousel-stories-slide-content .button-container {
+  margin: 24px 0 0;
+}
+
+.carousel-stories .carousel-stories-slide-content a.button:any-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  color: var(--link-hover-color);
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.5;
+  text-align: left;
+  text-decoration: none;
+  text-transform: none;
+  white-space: normal;
+}
+
+.carousel-stories .carousel-stories-slide-content a.button:any-link::after {
+  content: "";
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid currentcolor;
+  border-bottom: 0;
+  border-left: 0;
+  transform: rotate(45deg);
+}
+
+.carousel-stories .carousel-stories-slide-content a.button:any-link:hover {
+  text-decoration: underline;
+  background: none;
+}
+
+/* --- Navigation arrows: full-height bars over the image edges --- */
+.carousel-stories .carousel-stories-navigation-buttons {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  height: 100%;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-stories .carousel-stories-navigation-buttons button {
+  position: relative;
+  width: 44px;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background-color: rgb(255 255 255 / 20%);
+  pointer-events: auto;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button:hover,
+.carousel-stories .carousel-stories-navigation-buttons button:focus-visible {
+  background-color: rgb(255 255 255 / 40%);
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button::after {
+  display: block;
+  content: '';
+  border: 2px solid #fff;
+  border-bottom: 0;
+  border-left: 0;
+  height: 12px;
+  width: 12px;
+  position: absolute;
+  top: 50%;
+  left: calc(50% + 2px);
+  transform: translate(-50%, -50%) rotate(-135deg);
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button.slide-next::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+  left: calc(50% - 2px);
+}
+
+/* --- Slide indicator dots --- */
+.carousel-stories .carousel-stories-slide-indicators {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 6px 12px;
+  padding: 16px 12px;
+  background-color: rgb(247 247 247);
+  line-height: 0;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+.carousel-stories .carousel-stories-slide-indicator button {
+  width: 10px;
+  height: 10px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background-color: #c9c9c9;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.carousel-stories .carousel-stories-slide-indicator button:disabled,
+.carousel-stories .carousel-stories-slide-indicator button:hover,
+.carousel-stories .carousel-stories-slide-indicator button:focus-visible {
+  background-color: var(--text-color);
+}
+
+/* --- Desktop: 50/50 split, image left + content right --- */
+@media (width >= 900px) {
+  .carousel-stories .carousel-stories-slide {
+    flex-direction: row;
+    align-items: stretch;
+    min-height: 600px;
+  }
+
+  .carousel-stories .carousel-stories-slide-image {
+    flex: 0 0 50%;
+    width: 50%;
+  }
+
+  .carousel-stories .carousel-stories-slide-content {
+    flex: 0 0 50%;
+    width: 50%;
+    padding: 48px 80px;
+  }
+
+  /* nav arrows only cover the image (left) half */
+  .carousel-stories .carousel-stories-navigation-buttons {
+    right: 50%;
+  }
+
+  .carousel-stories .carousel-stories-navigation-buttons button {
+    width: 68px;
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "variantName": "hero-intro",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-23T01:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://honeywellbt.stage.honeywell.com/us/en",
+    "originPage": "Honeywell Building Technologies homepage",
+    "blockPosition": "top"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "dark",
+    "density": "spacious",
+    "purpose": "hero",
+    "imagePattern": "large"
+  },
+  "contentPattern": {
+    "structure": "heading + intro paragraph + feature image",
+    "buttonCount": 0,
+    "imageCount": 1
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "homepage top-of-page intro banners",
+      "dark/branded background hero with heading and long intro text"
+    ],
+    "notSuitableFor": [
+      "bottom-of-page CTA promo banners",
+      "light text-only hero with no background"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-23T01:31:00.000Z"
+  }
+}

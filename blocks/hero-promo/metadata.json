@@ -1,0 +1,36 @@
+{
+  "variantName": "hero-promo",
+  "baseBlock": "hero",
+  "version": "1.0.0",
+  "created": "2026-06-23T01:31:00.000Z",
+  "sourceContext": {
+    "originUrl": "https://honeywellbt.stage.honeywell.com/us/en",
+    "originPage": "Honeywell Building Technologies homepage",
+    "blockPosition": "bottom"
+  },
+  "visualCharacteristics": {
+    "colorScheme": "accent",
+    "density": "compact",
+    "purpose": "cta-banner",
+    "imagePattern": "noimg"
+  },
+  "contentPattern": {
+    "structure": "eyebrow + heading + single CTA",
+    "buttonCount": 1,
+    "imageCount": 0
+  },
+  "reuseGuidance": {
+    "suitableFor": [
+      "bottom-of-page call-to-action banners",
+      "red/branded colored promo banners with a single prominent button"
+    ],
+    "notSuitableFor": [
+      "top-of-page intro hero with long body text and imagery"
+    ]
+  },
+  "usage": {
+    "pagesUsing": ["/us/en"],
+    "reuseCount": 1,
+    "lastUsed": "2026-06-23T01:31:00.000Z"
+  }
+}
