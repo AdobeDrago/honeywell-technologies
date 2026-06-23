@@ -1,5 +1,19 @@
 /* cards-news -- "Insights & News" article grid
-   Design extracted from source div.business-grid computed styles. */
+   Design extracted from source div.business-grid li computed styles.
+   Source block padding: 64px 40px. Grid: 3 cols, 32px gap.
+   Card image 411x474 (cover, hover zoom).
+   Title h3 24/32 rgb(56 66 80); desc 14/20 rgb(56 66 80). */
+
+/* block padding (source: 64px 40px) -- mobile-first */
+.cards-news {
+  padding: 40px 24px;
+}
+
+@media (width >= 900px) {
+  .cards-news {
+    padding: 64px 40px;
+  }
+}
 
 .cards-news > ul {
   list-style: none;
@@ -23,7 +37,12 @@
   line-height: 0;
 }
 
+.cards-news .cards-news-card-image picture {
+  display: block;
+}
+
 .cards-news .cards-news-card-image img {
+  display: block;
   width: 100%;
   aspect-ratio: 411 / 474;
   object-fit: cover;
@@ -37,10 +56,12 @@
 
 /* card body */
 .cards-news .cards-news-card-body {
+  display: flex;
+  flex-direction: column;
   margin: 0;
 }
 
-/* title */
+/* title -- source h3 padding 8px 0 0 */
 .cards-news .cards-news-card-body h3 {
   margin: 0;
   padding: 8px 0 0;
@@ -57,9 +78,14 @@
   text-decoration: none;
 }
 
+.cards-news .cards-news-card-body h3 a:hover {
+  text-decoration: underline;
+}
+
 /* description */
 .cards-news .cards-news-card-body p {
   margin: 8px 0 0;
+  font-family: var(--body-font-family);
   font-size: 14px;
   font-weight: 400;
   line-height: 20px;

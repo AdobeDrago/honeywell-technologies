@@ -7,18 +7,22 @@
   padding: 0;
 }
 
-/* Intro container (.editorial-box-b on source): white card */
+/* Intro container (.cmp-secondary-hero on source): full-bleed 2-column grid.
+   Source grid-template-columns: 831.594px 593.984px (~1.4fr 1fr) at 1440px;
+   text card (.editorial-box-b) is the left column with 80px padding, the
+   right column is a reserved media slot. Content here is text-only, so the
+   right column stays empty but the text column keeps its constrained width
+   and offset rather than spanning full width. */
 .hero-intro {
   background-color: var(--background-color);
   color: var(--text-color);
-  padding: 40px 24px;
   min-height: 400px;
 }
 
+/* Mobile: single column, the cell carries the source's 80px-equivalent
+   horizontal/vertical inset scaled down for small screens. */
 .hero-intro > div > div {
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
+  padding: 40px 24px;
 }
 
 /* Heading (.cmp-secondary-hero__heading): 60px / 72px, weight 300, near-black */
@@ -39,26 +43,35 @@
   font-weight: 300;
   line-height: 1.5;
   color: var(--text-color);
-  margin: 24px 0 16px;
+  margin: 0 0 16px;
 }
 
 /* No-image variant keeps body text colors (no override needed here,
    colors are already set above for the white-background design). */
 
 @media (width >= 900px) {
-  .hero-intro {
+  /* Source: .cmp-secondary-hero grid = 831.594px / 593.984px ≈ 1.4fr / 1fr.
+     The block row becomes the grid; the single content cell sits in the
+     left column, the right column is the reserved (empty) media slot. */
+  .hero-intro > div {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr;
+    align-items: center;
+  }
+
+  /* Text card (.editorial-box-b): 80px padding all sides on source. */
+  .hero-intro > div > div {
+    grid-column: 1;
     padding: 80px;
   }
 
   .hero-intro h1 {
     font-size: 60px;
     line-height: 72px;
-    max-width: 700px;
   }
 
   .hero-intro p {
     font-size: 16px;
     line-height: 24px;
-    max-width: 520px;
   }
 }

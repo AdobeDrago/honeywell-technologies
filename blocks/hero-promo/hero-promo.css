@@ -12,28 +12,32 @@ main .hero-promo-wrapper {
 }
 /* stylelint-enable no-descending-specificity */
 
-/* banner surface */
+/* banner surface -- exact source background is a PNG (primary-promo-banner.png),
+   layered over the gradient as a fallback for offline/blocked loads */
 .hero-promo {
   position: relative;
   padding: 40px 24px;
   background-color: rgb(56 0 7);
-  background-image: linear-gradient(
-    115deg,
-    rgb(56 0 7) 0%,
-    rgb(90 0 51) 22%,
-    rgb(160 0 113) 45%,
-    rgb(212 0 97) 62%,
-    rgb(244 0 1) 100%
-  );
-  background-size: cover;
-  background-repeat: no-repeat;
+  background-image:
+    url('https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/images/background/primary-promo-banner.png'),
+    linear-gradient(
+      115deg,
+      rgb(56 0 7) 0%,
+      rgb(90 0 51) 22%,
+      rgb(160 0 113) 45%,
+      rgb(212 0 97) 62%,
+      rgb(244 0 1) 100%
+    );
+  background-position: 0% 0%;
+  background-size: cover, cover;
+  background-repeat: no-repeat, no-repeat;
   color: rgb(255 255 255);
 }
 
-/* content column -- left anchored, full text block */
+/* content column -- left anchored, fixed-width text block (612px at source) */
 .hero-promo > div > div {
   max-width: 612px;
-  padding: 48px 0;
+  padding: 58px 0;
 }
 
 /* eyebrow (first paragraph) */

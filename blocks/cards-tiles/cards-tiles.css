@@ -2,7 +2,9 @@
 
 /* Source: div.industry-grid .tile-grid__list--industryVariation (Honeywell stage) */
 
-/* Values from source computed styles. */
+/* All values from getComputedStyle on the source block. */
+
+/* Decorated EDS DOM: .cards-tiles > ul > li > .cards-tiles-card-body > p > a.button */
 
 .cards-tiles > ul {
   list-style: none;
@@ -13,24 +15,31 @@
   gap: 12px;
 }
 
-/* each tile = li; the link fills it */
+/* each tile = li; the body + p flatten so the link fills it */
 .cards-tiles > ul > li {
   margin: 0;
   padding: 0;
   display: flex;
 }
 
-/* EDS wraps the bare <a> in a <p> and auto-decorates the link as .button; flatten the wrapper */
-.cards-tiles > ul > li > p {
+.cards-tiles > ul > li > .cards-tiles-card-body {
   margin: 0;
   padding: 0;
   width: 100%;
   display: flex;
 }
 
-/* the tile surface — mirrors a.tile-grid__item.            */
+/* EDS wraps the bare <a> in a <p> (.button-container) and decorates it as
+   .button — flatten the wrapper so it does not add margins/height. */
+.cards-tiles > ul > li > .cards-tiles-card-body > p {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  display: flex;
+}
 
-/* High specificity to override global a.button:any-link.    */
+/* the tile surface — mirrors a.tile-grid__item (industryVariation).
+   High specificity to override global a.button:any-link. */
 main .cards-tiles > ul > li a,
 main .cards-tiles > ul > li a.button:any-link {
   position: relative;
@@ -41,6 +50,7 @@ main .cards-tiles > ul > li a.button:any-link {
   justify-content: flex-end;
   width: 100%;
   max-width: none;
+  height: 180px;
   min-height: 180px;
   margin: 0;
   padding: 40px;
@@ -48,31 +58,31 @@ main .cards-tiles > ul > li a.button:any-link {
   border-radius: 0;
   box-shadow: none;
   background-color: rgb(249 250 251);
-  color: var(--link-color);
+  color: rgb(17 25 39);
   overflow: hidden;
   text-decoration: none;
   text-align: left;
   white-space: normal;
   text-overflow: clip;
 
-  /* title typography (source .content-box .title) */
+  /* title typography — source .content-box .title */
   font-family: var(--heading-font-family);
   font-size: 24px;
   font-weight: 500;
   line-height: 32px;
   text-transform: capitalize;
   cursor: pointer;
-  transition: background-color 0.4s, backdrop-filter 0.4s;
+  transition: background-color 0.4s, backdrop-filter 0.4s, color 0.4s;
 }
 
-/* hover / focus — source: bg rgb(243,244,246) + blur(8px) */
+/* hover / focus — source: bg rgb(243,244,246) + blur(8px), title rgb(17,25,39) */
 main .cards-tiles > ul > li a:hover,
 main .cards-tiles > ul > li a:focus,
 main .cards-tiles > ul > li a.button:hover,
 main .cards-tiles > ul > li a.button:focus {
   background-color: rgb(243 244 246);
   backdrop-filter: blur(8px);
-  color: var(--link-color);
+  color: rgb(17 25 39);
   text-decoration: none;
   cursor: pointer;
 }
@@ -84,7 +94,7 @@ main .cards-tiles > ul > li a.button:focus {
   }
 }
 
-/* desktop: 4 columns */
+/* desktop: 4 columns (source gridLayout25 = 25% width) */
 @media (width >= 900px) {
   .cards-tiles > ul {
     grid-template-columns: repeat(4, 1fr);

@@ -32,6 +32,16 @@ export default function transform(hookName, element, payload) {
       '.cookie-banner',
       '#onetrust-consent-sdk',
     ]);
+
+    // Remove invisible third-party tracking-pixel images (Twitter/X, LiveRamp)
+    // that leak into page content as 1x1 beacons.
+    element.querySelectorAll(
+      'img[src*="t.co/i/adsct"], img[src*="analytics.twitter.com"], img[src*="rlcdn.com"]',
+    ).forEach((img) => {
+      const wrapper = img.closest('picture') || img;
+      const para = wrapper.closest('p');
+      (para || wrapper).remove();
+    });
   }
 
   if (hookName === TransformHook.afterTransform) {

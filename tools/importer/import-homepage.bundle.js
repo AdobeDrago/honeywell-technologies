@@ -273,6 +273,13 @@ var CustomImportScript = (() => {
         ".cookie-banner",
         "#onetrust-consent-sdk"
       ]);
+      element.querySelectorAll(
+        'img[src*="t.co/i/adsct"], img[src*="analytics.twitter.com"], img[src*="rlcdn.com"]'
+      ).forEach((img) => {
+        const wrapper = img.closest("picture") || img;
+        const para = wrapper.closest("p");
+        (para || wrapper).remove();
+      });
     }
     if (hookName === TransformHook.afterTransform) {
       WebImporter.DOMUtils.remove(element, [

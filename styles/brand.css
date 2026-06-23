@@ -1,3 +1,58 @@
+/* Roobert — Honeywell brand typeface (self-hosted on source domain) */
+@font-face {
+  font-family: Roobert;
+  font-weight: 300;
+  font-display: swap;
+  src: local("Roobert"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-Light.woff2") format("woff2"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-Light.woff") format("woff");
+}
+
+@font-face {
+  font-family: Roobert;
+  font-weight: 400;
+  font-display: swap;
+  src: local("Roobert"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-Regular.woff2") format("woff2"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-Regular.woff") format("woff");
+}
+
+@font-face {
+  font-family: Roobert;
+  font-weight: 500;
+  font-display: swap;
+  src: local("Roobert"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-Medium.woff2") format("woff2"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-Medium.woff") format("woff");
+}
+
+@font-face {
+  font-family: Roobert;
+  font-weight: 600;
+  font-display: swap;
+  src: local("Roobert"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-SemiBold.woff2") format("woff2"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-SemiBold.woff") format("woff");
+}
+
+@font-face {
+  font-family: Roobert;
+  font-weight: 700;
+  font-display: swap;
+  src: local("Roobert"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-Bold.woff2") format("woff2"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-Bold.woff") format("woff");
+}
+
+@font-face {
+  font-family: Roobert;
+  font-weight: 800 900;
+  font-display: swap;
+  src: local("Roobert"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-Heavy.woff2") format("woff2"),
+    url("https://honeywellbt.stage.honeywell.com/etc.clientlibs/honeywell/clientlibs/clientlib-common/resources/fonts/roobert/WOFF/Roobert-Heavy.woff") format("woff");
+}
+
 :root {
   --heading-font-family: "Roobert", "Helvetica Neue", helvetica, arial, sans-serif;
   --body-font-family: "Roobert", "Helvetica Neue", arial, sans-serif;
