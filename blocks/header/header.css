@@ -1,324 +1,514 @@
-/* header and nav layout */
+/* Honeywell Technologies header — desktop-first */
+
 header .nav-wrapper {
-  background-color: var(--background-color);
-  width: 100%;
-  z-index: 2;
   position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 200;
+  background-color: rgb(255 255 255 / 80%);
+  backdrop-filter: blur(6px);
 }
 
 header nav {
   box-sizing: border-box;
-  display: grid;
-  grid-template:
-    'hamburger brand tools' var(--nav-height)
-    'sections sections sections' 1fr / auto 1fr auto;
+  display: flex;
   align-items: center;
-  gap: 0 24px;
-  margin: auto;
-  max-width: 1248px;
-  height: var(--nav-height);
-  padding: 0 24px;
+  gap: 24px;
+  height: 80px;
+  max-width: 100%;
+  margin: 0;
+  padding: 0 30px;
   font-family: var(--body-font-family);
 }
 
-header nav[aria-expanded='true'] {
-  grid-template:
-    'hamburger brand' var(--nav-height)
-    'sections sections' 1fr
-    'tools tools' var(--nav-height) / auto 1fr;
-  overflow-y: auto;
-  min-height: 100dvh;
-}
-
-@media (width >= 900px) {
-  header nav {
-    display: flex;
-    justify-content: space-between;
-    gap: 0 32px;
-    max-width: 1264px;
-    padding: 0 32px;
-  }
-
-  header nav[aria-expanded='true'] {
-    min-height: 0;
-    overflow: visible;
-  }
-}
-
-header nav p {
-  margin: 0;
-  
-  /* line-height: 1; BOILERPLATE DOESN'T HAVE a P tag in header, */
-}
-
-header nav a:any-link {
-  color: currentcolor;
-}
-
-/* hamburger */
-header nav .nav-hamburger {
-  grid-area: hamburger;
-  height: 22px;
+/* Brand / logo */
+header nav .nav-brand {
+  flex: 0 0 auto;
   display: flex;
   align-items: center;
 }
 
-header nav .nav-hamburger button {
-  height: 22px;
+header nav .nav-logo {
+  display: inline-flex;
+  align-items: center;
+}
+
+header nav .nav-logo img {
+  width: 156px;
+  height: auto;
+  display: block;
+}
+
+/* Main nav (desktop menubar) */
+header nav .nav-sections {
+  flex: 1 1 auto;
+}
+
+header nav .nav-main {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  list-style: none;
   margin: 0;
-  border: 0;
-  border-radius: 0;
   padding: 0;
-  background-color: var(--background-color);
-  color: inherit;
-  overflow: initial;
-  text-overflow: initial;
-  white-space: initial;
+}
+
+header nav .nav-main-item {
+  position: static;
+}
+
+header nav .nav-main-link {
+  display: inline-block;
+  padding: 6px 0;
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  line-height: 1.2;
+  color: rgb(66 66 66);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+header nav .nav-main-link:hover {
+  color: var(--link-hover-color);
+}
+
+/* Flyout megamenu (desktop) */
+header nav .nav-flyout {
+  display: none;
+  position: fixed;
+  left: 0;
+  top: 80px;
+  width: 100%;
+  background: #fff;
+  box-shadow: 0 12px 24px rgb(0 0 0 / 12%);
+  z-index: 210;
+}
+
+header nav .nav-main-item.has-flyout[aria-expanded='true'] .nav-flyout {
+  display: block;
+}
+
+header nav .nav-flyout-inner {
+  display: flex;
+  gap: 48px;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 48px 30px 56px;
+}
+
+header nav .nav-flyout-col {
+  flex: 0 0 auto;
+  min-width: 200px;
+}
+
+header nav .nav-flyout-col ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+header nav .nav-flyout-col a {
+  color: rgb(20 20 20);
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.3;
+}
+
+header nav .nav-flyout-col a:hover {
+  color: var(--link-hover-color);
+  text-decoration: underline;
+}
+
+/* Featured cards column (images) */
+header nav .nav-flyout-featured {
+  flex: 1 1 auto;
+  margin-left: auto;
+}
+
+header nav .nav-flyout-featured ul {
+  flex-direction: row;
+  gap: 20px;
+}
+
+header nav .nav-flyout-featured li {
+  flex: 1 1 0;
+  max-width: 220px;
+}
+
+/* stylelint-disable-next-line no-descending-specificity */
+header nav .nav-flyout-card a {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+header nav .nav-flyout-card img {
+  width: 100%;
+  height: 132px;
+  object-fit: cover;
+  display: block;
+}
+
+/* Tools (hamburger + slide-in panel) */
+header nav .nav-tools {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+header nav .nav-hamburger {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: rgb(48 48 48);
+  cursor: pointer;
+  position: relative;
+  z-index: 320;
 }
 
 header nav .nav-hamburger-icon,
 header nav .nav-hamburger-icon::before,
 header nav .nav-hamburger-icon::after {
-  box-sizing: border-box;
-  display: block;
-  position: relative;
-  width: 20px;
-}
-
-header nav .nav-hamburger-icon::before,
-header nav .nav-hamburger-icon::after {
   content: '';
   position: absolute;
-  background: currentcolor;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon,
-header nav[aria-expanded='false'] .nav-hamburger-icon::before,
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  height: 2px;
-  border-radius: 2px;
-  background: currentcolor;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::before {
-  top: -6px;
-}
-
-header nav[aria-expanded='false'] .nav-hamburger-icon::after {
-  top: 6px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon {
-  height: 22px;
-}
-
-header nav[aria-expanded='true'] .nav-hamburger-icon::before,
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: 3px;
-  left: 1px;
-  transform: rotate(45deg);
-  transform-origin: 2px 1px;
+  left: 0;
   width: 24px;
   height: 2px;
-  border-radius: 2px;
+  background: currentcolor;
+  transition: transform 0.25s ease, opacity 0.25s ease;
 }
 
-header nav[aria-expanded='true'] .nav-hamburger-icon::after {
-  top: unset;
-  bottom: 3px;
+header nav .nav-hamburger-icon {
+  top: 11px;
+}
+
+header nav .nav-hamburger-icon::before {
+  top: -7px;
+}
+
+header nav .nav-hamburger-icon::after {
+  top: 7px;
+}
+
+header nav .nav-hamburger[aria-expanded='true'] .nav-hamburger-icon {
+  background: transparent;
+}
+
+header nav .nav-hamburger[aria-expanded='true'] .nav-hamburger-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+header nav .nav-hamburger[aria-expanded='true'] .nav-hamburger-icon::after {
+  top: 0;
   transform: rotate(-45deg);
 }
 
-@media (width >= 900px) {
-  header nav .nav-hamburger {
-    display: none;
-    visibility: hidden;
-  }
-}
-
-/* brand */
-header .nav-brand {
-  grid-area: brand;
-  flex-basis: 128px;
-  font-size: var(--heading-font-size-s);
-  font-weight: 700;
-  line-height: 1;
-}
-
-header nav .nav-brand img {
-  width: 128px;
-  height: auto;
-}
-
-/* sections */
-header nav .nav-sections {
-  grid-area: sections;
-  flex: 1 1 auto;
-  display: none;
+/* Slide-in panel */
+header nav .nav-panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 420px;
+  max-width: 92vw;
+  height: 100vh;
+  background: #fff;
+  box-shadow: -8px 0 24px rgb(0 0 0 / 18%);
+  transform: translateX(100%);
+  transition: transform 0.3s ease, visibility 0.3s ease;
+  z-index: 310;
+  overflow: hidden;
   visibility: hidden;
 }
 
-header nav[aria-expanded='true'] .nav-sections {
-  display: block;
+/* dark gradient strip on the left edge of the panel */
+header nav .nav-panel::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 100%;
+  background: linear-gradient(180deg, rgb(48 48 48) 0%, rgb(60 40 50) 70%, rgb(120 30 40) 100%);
+  z-index: 1;
+}
+
+header nav[aria-expanded='true'] .nav-panel {
+  transform: translateX(0);
   visibility: visible;
-  align-self: start;
 }
 
-header nav .nav-sections ul {
-  list-style: none;
-  padding-left: 0;
-  font-size: var(--body-font-size-s);
+header nav .nav-panel-viewport {
+  position: relative;
+  height: 100%;
+  margin-left: 56px;
 }
 
-header nav .nav-sections ul > li {
-  font-weight: 500;
+header nav .nav-panel-view {
+  position: absolute;
+  inset: 0;
+  padding: 80px 32px 32px;
+  background: #fff;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  overflow-y: auto;
 }
 
-header nav .nav-sections ul > li > ul {
-  margin-top: 0;
+header nav .nav-panel-view.is-active {
+  transform: translateX(0);
 }
 
-header nav .nav-sections ul > li > ul > li {
-  font-weight: 400;
-}
-
-@media (width >= 900px) {
-  header nav .nav-sections {
-    display: block;
-    visibility: visible;
-    white-space: nowrap;
-  }
-
-  header nav[aria-expanded='true'] .nav-sections {
-    align-self: unset;
-  }
-
-  header nav .nav-sections .nav-drop {
-    position: relative;
-    padding-right: 16px;
-    cursor: pointer;
-  }
-
-  header nav .nav-sections .nav-drop::after {
-    content: '';
-    display: inline-block;
-    position: absolute;
-    top: 0.5em;
-    right: 2px;
-    transform: rotate(135deg);
-    width: 6px;
-    height: 6px;
-    border: 2px solid currentcolor;
-    border-radius: 0 1px 0 0;
-    border-width: 2px 2px 0 0;
-  }
-
-  header nav .nav-sections .nav-drop[aria-expanded='true']::after {
-    top: unset;
-    bottom: 0.5em;
-    transform: rotate(315deg);
-  }
-
-  header nav .nav-sections ul {
-    display: flex;
-    align-items: center;
-    gap: 24px;
-    margin: 0;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li {
-    flex: 0 1 auto;
-    position: relative;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul {
-    display: none;
-    position: relative;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li[aria-expanded='true'] > ul {
-    display: block;
-    position: absolute;
-    left: -24px;
-    width: 200px;
-    top: 150%;
-    padding: 16px;
-    background-color: var(--light-color);
-    white-space: initial;
-    z-index: 1;
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul::before {
-    content: '';
-    position: absolute;
-    top: -8px;
-    left: 16px;
-    width: 0;
-    height: 0;
-    border-left: 8px solid transparent;
-    border-right: 8px solid transparent;
-    border-bottom: 8px solid var(--light-color);
-  }
-
-  header nav .nav-sections .default-content-wrapper > ul > li > ul > li {
-    padding: 8px 0;
-  }
-}
-
-/* tools */
-header nav .nav-tools {
-  grid-area: tools;
-}
-
-header nav .nav-tools .button {
-  margin: 0;
-  border: none;
-  padding: 0.5em;
-  background: none;
-  line-height: 0;
-}
-
-/* breadcrumbs */
-header .breadcrumbs {
-  display: none;
-  margin: auto;
-  max-width: 1248px;
-  height: var(--breadcrumbs-height);
-  padding: 0 24px;
-  font-size: var(--body-font-size-xs);
-  overflow: hidden;
-}
-
-header .breadcrumbs ol {
+header nav .nav-panel-header {
   display: flex;
-  flex-flow: wrap;
+  align-items: center;
+  gap: 16px;
+  padding-bottom: 16px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid rgb(216 216 216);
+}
+
+header nav .nav-panel-back {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+header nav .nav-panel-back::before {
+  content: '';
+  position: absolute;
+  left: 4px;
+  top: 7px;
+  width: 10px;
+  height: 10px;
+  border-left: 2px solid rgb(48 48 48);
+  border-bottom: 2px solid rgb(48 48 48);
+  transform: rotate(45deg);
+}
+
+header nav .nav-panel-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(20 20 20);
+}
+
+header nav .nav-panel-view ul {
   list-style: none;
+  margin: 0;
   padding: 0;
-  margin-top: 0;
-  margin-bottom: 0;
-  gap: 1ch;
+  display: flex;
+  flex-direction: column;
+}
+
+header nav .nav-panel-view li {
+  border-bottom: 1px solid rgb(238 238 238);
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-header .breadcrumbs ol li {
-  padding: 0;
-  color: var(--dark-color);
+header nav .nav-panel-view a,
+header nav .nav-panel-drill {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 500;
+  color: rgb(20 20 20);
+  text-decoration: none;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
 }
 
-header .breadcrumbs ol li:not(:last-child)::after {
-  content: '/';
-  padding-left: 1ch;
+header nav .nav-panel-drill::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-top: 2px solid rgb(48 48 48);
+  border-right: 2px solid rgb(48 48 48);
+  transform: rotate(45deg);
+}
+
+header nav .nav-panel-view a:hover,
+header nav .nav-panel-drill:hover {
+  color: var(--link-hover-color);
+}
+
+/* Overlay / backdrop */
+header .nav-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgb(0 0 0 / 40%);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.25s ease, visibility 0.25s ease;
+  z-index: 190;
+}
+
+header .nav-overlay.is-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Mobile main-nav accordion (lives inside the slide-in drawer) */
+header nav .nav-mobile-accordion {
+  list-style: none;
+  margin: 0 0 8px;
+  padding: 0;
+  display: none;
+}
+
+header nav .nav-mobile-accordion > li {
+  border-bottom: 1px solid rgb(238 238 238);
+}
+
+header nav .nav-mobile-acc-toggle,
+header nav .nav-mobile-acc-link {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 16px 0;
+  font-family: var(--body-font-family);
+  font-size: 18px;
+  font-weight: 500;
+  color: rgb(20 20 20);
+  text-decoration: none;
+  text-align: left;
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+header nav .nav-mobile-acc-toggle::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-right: 2px solid rgb(48 48 48);
+  border-bottom: 2px solid rgb(48 48 48);
+  transform: rotate(45deg);
+  transition: transform 0.25s ease;
+}
+
+header nav .nav-mobile-acc-toggle[aria-expanded='true']::after {
+  transform: rotate(-135deg);
+}
+
+header nav .nav-mobile-acc-panel {
+  display: none;
+  padding: 0 0 12px 12px;
+}
+
+header nav .nav-mobile-acc-toggle[aria-expanded='true'] + .nav-mobile-acc-panel {
+  display: block;
+}
+
+header nav .nav-mobile-acc-panel ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
-header .breadcrumbs ol li[aria-current] {
-  color: var(--text-color);
+header nav .nav-mobile-acc-panel a {
+  display: block;
+  padding: 10px 0;
+  font-size: 16px;
+  font-weight: 400;
+  color: rgb(56 66 80);
+  text-decoration: none;
 }
 
-@media (width >= 900px) {
-  header .breadcrumbs {
+header nav .nav-mobile-acc-panel a:hover {
+  color: var(--link-hover-color);
+}
+
+/* Mobile / tablet */
+@media (width < 900px) {
+  header nav {
+    gap: 12px;
+  }
+
+  /* hide desktop menubar; nav lives in the slide-in drawer on mobile */
+  header nav .nav-sections {
+    display: none;
+  }
+
+  /* drawer goes full-width on mobile and shows the main-nav accordion */
+  header nav .nav-panel {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  /* full-width flush content on mobile — gradient strip becomes a thin
+     non-insetting top accent so menu items span the whole viewport */
+  header nav .nav-panel::before {
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(90deg, rgb(48 48 48) 0%, rgb(120 30 40) 100%);
+  }
+
+  header nav .nav-panel-viewport {
+    margin-left: 0;
+  }
+
+  /* full-bleed view: no horizontal padding so the menu list spans 0→viewport.
+     Horizontal insets live on the links/toggles instead. */
+  header nav .nav-panel-view {
+    padding: 72px 0 24px;
+  }
+
+  header nav .nav-mobile-accordion {
     display: block;
-    max-width: 1264px;
-    padding: 0 32px;
+    width: 100%;
+  }
+
+  header nav .nav-mobile-accordion > li,
+  header nav .nav-mobile-acc-toggle,
+  header nav .nav-mobile-acc-link {
+    width: 100%;
+  }
+
+  /* mobile emphasis: heavier weight + internal padding (not on the list) */
+  header nav .nav-mobile-acc-toggle,
+  header nav .nav-mobile-acc-link {
+    font-weight: 600;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  header nav .nav-mobile-acc-panel {
+    padding-left: 32px;
+    padding-right: 20px;
+  }
+
+  /* hide the hamburger tools container's width influence is irrelevant;
+     keep the panel header/locale rows full-bleed too */
+  header nav .nav-panel-header,
+  header nav .nav-panel-view > ul > li > a,
+  header nav .nav-panel-view > ul > li > button {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  header nav .nav-logo img {
+    width: 132px;
   }
 }
