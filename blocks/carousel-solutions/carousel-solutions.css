@@ -4,13 +4,27 @@
  * Source design: leading dark/gradient CTA card + N image cards, slide counter (01/07) + prev/next arrows.
  */
 
+/* Full-width section: cards bleed off the right edge (showing ~2.5 cards) with a
+   left inset matching the source. Escape the global 1200px section wrapper. */
+main > .section > .carousel-solutions-wrapper {
+  max-width: none;
+  padding: 0;
+}
+
 .carousel-solutions {
   --carousel-card-width: 280px;
   --carousel-card-height: 560px;
   --carousel-card-gap: 12px;
+  --carousel-side-inset: 24px;
 
   position: relative;
   background-color: var(--background-color);
+}
+
+@media (width >= 900px) {
+  .carousel-solutions {
+    --carousel-side-inset: 40px;
+  }
 }
 
 /* track container */
@@ -21,7 +35,10 @@
 .carousel-solutions .carousel-solutions-slides {
   list-style: none;
   margin: 0;
-  padding: 0;
+
+  /* Left inset only; the track overflows to the viewport's right edge so the
+     trailing card is partially visible (2.5 cards), matching the source. */
+  padding: 0 0 0 var(--carousel-side-inset);
   display: flex;
   flex-direction: row;
   align-items: stretch;
@@ -29,6 +46,15 @@
   overflow-x: auto;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
+
+  /* Keep the left inset when a card snaps to the start. */
+  scroll-padding-left: var(--carousel-side-inset);
+}
+
+/* Trailing spacer so the last card can scroll fully into view past the inset. */
+.carousel-solutions .carousel-solutions-slides::after {
+  content: '';
+  flex: 0 0 var(--carousel-side-inset);
 }
 
 .carousel-solutions .carousel-solutions-slides::-webkit-scrollbar {
@@ -118,10 +144,14 @@
   color: var(--link-hover-color);
 }
 
-/* leading CTA / intro card -- dark with red->purple gradient, white text */
+/* Leading CTA / intro card. Source uses a brand PNG (overview_card_bg_new.png)
+   that is CORS-blocked on localhost; this layered gradient approximates it: a red
+   field with a defined blue/purple streak sweeping up from the lower-left. */
 .carousel-solutions .carousel-solutions-slide.carousel-solutions-cta {
-  background-color: rgb(26 26 26);
-  background-image: linear-gradient(150deg, #e30613 0%, #e30613 30%, #c81f6b 62%, #8a2be2 100%);
+  background-color: #e30613;
+  background-image:
+    radial-gradient(120% 90% at 18% 108%, rgb(64 60 220 / 95%) 0%, rgb(96 30 200 / 70%) 26%, rgb(150 30 120 / 35%) 46%, rgb(227 6 19 / 0%) 66%),
+    linear-gradient(180deg, #e30613 0%, #e30613 100%);
 }
 
 .carousel-solutions .carousel-solutions-slide.carousel-solutions-cta .carousel-solutions-slide-image {
@@ -161,7 +191,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0 4px;
+  padding: 0 var(--carousel-side-inset);
   margin-top: 24px;
 }
 
