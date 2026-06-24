@@ -92,6 +92,16 @@ main > .section > .carousel-solutions-wrapper {
   width: 100%;
   height: 100%;
   object-fit: cover;
+
+  /* Source: the card image eases in scale on hover/focus. */
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Hover/focus zoom -- source scales the card image to 1.1 (the image area has
+   overflow: hidden, so it zooms within the fixed 5:6 frame). */
+.carousel-solutions .carousel-solutions-slide:hover .carousel-solutions-slide-image img,
+.carousel-solutions .carousel-solutions-slide:focus-within .carousel-solutions-slide-image img {
+  transform: scale(1.1);
 }
 
 /* text panel (bottom of card) -- source: bg rgb(249,250,251), padding 40px, gap 10px */
