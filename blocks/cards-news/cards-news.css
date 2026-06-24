@@ -118,6 +118,10 @@ main > .section > .cards-news-wrapper {
   display: flex;
   flex-direction: column;
   margin: 0;
+
+  /* Source: 16px gap between the image bottom and the first text (category
+     eyebrow when present, otherwise the title). */
+  padding-top: 16px;
 }
 
 /* category eyebrow -- always visible; present only on some cards.
