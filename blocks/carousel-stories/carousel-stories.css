@@ -167,12 +167,12 @@ main > .section > .default-content-wrapper:has(+ .carousel-stories-wrapper) {
   background-color: rgb(40 40 40);
 }
 
-/* --- Navigation arrows: thin gray chevrons in the side gutters --- */
+/* --- Navigation arrows: thin gray arrows (shaft + head) in the side gutters --- */
 .carousel-stories .carousel-stories-navigation-buttons {
   position: absolute;
   inset: 0;
   pointer-events: none;
-  z-index: 2;
+  z-index: 3;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
@@ -198,22 +198,46 @@ main > .section > .default-content-wrapper:has(+ .carousel-stories-wrapper) {
   right: 20px;
 }
 
+/* Arrow shaft — horizontal line across the button center. */
+.carousel-stories .carousel-stories-navigation-buttons button::before {
+  display: block;
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 22px;
+  height: 2px;
+  background-color: rgb(120 120 120);
+  transform: translate(-50%, -50%);
+}
+
+/* Arrow head — chevron at the tip of the shaft. */
 .carousel-stories .carousel-stories-navigation-buttons button::after {
   display: block;
   content: '';
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 14px;
-  height: 14px;
+  width: 10px;
+  height: 10px;
   border: 2px solid rgb(120 120 120);
   border-bottom: 0;
   border-left: 0;
   transform: translate(-50%, -50%) rotate(-135deg);
 }
 
+.carousel-stories .carousel-stories-navigation-buttons button.slide-prev::after {
+  margin-left: -6px;
+}
+
 .carousel-stories .carousel-stories-navigation-buttons button.slide-next::after {
+  margin-left: 6px;
   transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button:hover::before,
+.carousel-stories .carousel-stories-navigation-buttons button:focus-visible::before {
+  background-color: rgb(33 37 41);
 }
 
 .carousel-stories .carousel-stories-navigation-buttons button:hover::after,
@@ -235,20 +259,27 @@ main > .section > .default-content-wrapper:has(+ .carousel-stories-wrapper) {
     height: 100%;
   }
 
+  /* Full-slide gradient scrim: darkest at the left (under the text), fading to
+     transparent over the image — matches the source's content-wrapper overlay. */
+  .carousel-stories .carousel-stories-slide-image::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-image:
+      linear-gradient(262.35deg, rgb(96 22 181 / 0%) 0.11%, rgb(96 22 181 / 20%) 96.34%),
+      linear-gradient(270deg, rgb(0 0 0 / 0%) 40.3%, rgb(0 0 0 / 70%) 67.16%);
+  }
+
   .carousel-stories .carousel-stories-slide-content {
     position: relative;
-    z-index: 1;
+    z-index: 2;
     flex: 0 0 480px;
     width: 480px;
     max-width: 480px;
     min-height: 600px;
     padding: 80px 40px;
-
-    /* Dark gradient scrim, fading to transparent toward the image. */
     background-color: transparent;
-    background-image:
-      linear-gradient(262.35deg, rgb(96 22 181 / 0%) 0.11%, rgb(96 22 181 / 20%) 96.34%),
-      linear-gradient(270deg, rgb(0 0 0 / 0%) 40.3%, rgb(0 0 0 / 70%) 67.16%);
   }
 
   .carousel-stories .carousel-stories-slide-content h2 {
