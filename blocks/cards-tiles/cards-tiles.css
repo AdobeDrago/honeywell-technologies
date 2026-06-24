@@ -109,14 +109,21 @@ main .cards-tiles > ul > li a.button:any-link {
   line-height: 32px;
   text-transform: capitalize;
   cursor: pointer;
-  transition: background-color 0.4s, backdrop-filter 0.4s, color 0.4s;
+
+  /* The title sits bottom-aligned (justify-content: flex-end). On hover the
+     source's content-box gains gap: 8px, lifting the title ~8px ("the text
+     jumps"). With no description in our tiles, we reproduce that lift by
+     animating padding-bottom, which pushes the bottom-aligned text up 8px. */
+  transition: background-color 0.4s, backdrop-filter 0.4s, color 0.4s, padding-bottom 0.4s;
 }
 
-/* hover / focus — source: bg rgb(243,244,246) + blur(8px), title rgb(17,25,39) */
+/* hover / focus — source: bg rgb(243,244,246) + blur(8px), title rgb(17,25,39),
+   plus the ~8px upward title jump. */
 main .cards-tiles > ul > li a:hover,
 main .cards-tiles > ul > li a:focus,
 main .cards-tiles > ul > li a.button:hover,
 main .cards-tiles > ul > li a.button:focus {
+  padding-bottom: 48px;
   background-color: rgb(243 244 246);
   backdrop-filter: blur(8px);
   color: rgb(17 25 39);
