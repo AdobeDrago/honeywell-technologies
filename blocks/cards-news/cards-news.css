@@ -94,6 +94,8 @@ main > .section > .cards-news-wrapper {
 
 .cards-news .cards-news-card-image picture {
   display: block;
+  width: 100%;
+  height: 100%;
 }
 
 .cards-news .cards-news-card-image img {
@@ -114,6 +116,18 @@ main > .section > .cards-news-wrapper {
   display: flex;
   flex-direction: column;
   margin: 0;
+}
+
+/* category eyebrow -- always visible; present only on some cards.
+   Source .business-grid-item__subtitle: 14/20 rgb(77 87 97). */
+.cards-news .cards-news-card-body p.cards-news-card-category {
+  order: -1;
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  color: rgb(77 87 97);
 }
 
 /* title -- source h3 padding 8px 0 0 */
@@ -137,8 +151,8 @@ main > .section > .cards-news-wrapper {
   text-decoration: underline;
 }
 
-/* description */
-.cards-news .cards-news-card-body p {
+/* description -- source 14/20 rgb(56 66 80) */
+.cards-news .cards-news-card-body p.cards-news-card-desc {
   margin: 8px 0 0;
   font-family: var(--body-font-family);
   font-size: 14px;
@@ -151,5 +165,46 @@ main > .section > .cards-news-wrapper {
   .cards-news > ul {
     grid-template-columns: repeat(3, 1fr);
     gap: 32px;
+  }
+
+  /* Source: each card is a fixed-height (562px) grid -- image takes the
+     flexible top, body the auto bottom. On hover the description reveals,
+     growing the body and shrinking the image, so the card never changes size. */
+  .cards-news > ul > li {
+    height: 562px;
+    overflow: hidden;
+  }
+
+  .cards-news .cards-news-card-image {
+    flex: 1 1 auto;
+    min-height: 0;
+  }
+
+  .cards-news .cards-news-card-image img {
+    height: 100%;
+
+    /* drop the fixed ratio so the image fills the flexible space */
+    aspect-ratio: auto;
+  }
+
+  .cards-news .cards-news-card-body {
+    flex: 0 0 auto;
+  }
+
+  /* description hidden at rest; revealed on hover (source: max-height 0->262px,
+     opacity 0->1, transition max-height 0.5s / opacity 0.3s). */
+  .cards-news .cards-news-card-body p.cards-news-card-desc {
+    max-height: 0;
+    margin: 0;
+    opacity: 0;
+    overflow: hidden;
+    transition: max-height 0.5s, opacity 0.3s, margin 0.5s;
+  }
+
+  .cards-news > ul > li:hover .cards-news-card-body p.cards-news-card-desc,
+  .cards-news > ul > li:focus-within .cards-news-card-body p.cards-news-card-desc {
+    max-height: 262px;
+    margin: 16px 0 0;
+    opacity: 1;
   }
 }

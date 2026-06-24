@@ -251,7 +251,13 @@ var CustomImportScript = (() => {
       const image = item.querySelector(".business-grid-item__image img, img");
       const titleEl = item.querySelector(".business-grid-item__title, h1, h2, h3, h4");
       const desc = item.querySelector(".business-grid-item__desc, .business-grid-item__details p, p.business-grid-item__desc");
+      const category = item.querySelector(".business-grid-item__subtitle");
       const contentCell = [];
+      if (category && category.textContent.trim()) {
+        const cat = document.createElement("p");
+        cat.textContent = category.textContent.trim();
+        contentCell.push(cat);
+      }
       if (titleEl) {
         const titleText = titleEl.textContent.trim();
         if (href) {

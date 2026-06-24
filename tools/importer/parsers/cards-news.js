@@ -49,8 +49,16 @@ export default function parse(element, { document }) {
     const image = item.querySelector('.business-grid-item__image img, img');
     const titleEl = item.querySelector('.business-grid-item__title, h1, h2, h3, h4');
     const desc = item.querySelector('.business-grid-item__desc, .business-grid-item__details p, p.business-grid-item__desc');
+    // Category eyebrow (e.g. "Buildings", "Healthcare") -- present on some cards
+    // only. Emitted as the first paragraph so it renders above the title.
+    const category = item.querySelector('.business-grid-item__subtitle');
 
     const contentCell = [];
+    if (category && category.textContent.trim()) {
+      const cat = document.createElement('p');
+      cat.textContent = category.textContent.trim();
+      contentCell.push(cat);
+    }
     if (titleEl) {
       const titleText = titleEl.textContent.trim();
       if (href) {

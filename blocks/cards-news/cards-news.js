@@ -9,8 +9,21 @@ export default function decorate(block) {
     moveInstrumentation(row, li);
     while (row.firstElementChild) li.append(row.firstElementChild);
     [...li.children].forEach((div) => {
-      if (div.children.length === 1 && div.querySelector('picture')) div.className = 'cards-news-card-image';
-      else div.className = 'cards-news-card-body';
+      if (div.children.length === 1 && div.querySelector('picture')) {
+        div.className = 'cards-news-card-image';
+      } else {
+        div.className = 'cards-news-card-body';
+        // Tag the category eyebrow (paragraph before the heading) and the
+        // description (paragraph after the heading) so the hover reveal and the
+        // always-on category can be styled separately.
+        const children = [...div.children];
+        const headingIdx = children.findIndex((el) => /^H[1-6]$/.test(el.tagName));
+        children.forEach((el, idx) => {
+          if (el.tagName !== 'P') return;
+          const isCategory = headingIdx !== -1 && idx < headingIdx;
+          el.classList.add(isCategory ? 'cards-news-card-category' : 'cards-news-card-desc');
+        });
+      }
     });
     ul.append(li);
   });
