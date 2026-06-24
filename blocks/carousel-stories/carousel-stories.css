@@ -190,12 +190,15 @@ main > .section > .default-content-wrapper:has(+ .carousel-stories-wrapper) {
   transform: translateY(-50%);
 }
 
+/* Sit in the gray gutters beside the image. The nav-buttons container is inset
+   to the slide area (the block's 80px side padding), so negative offsets push
+   the arrows out onto the light-gray background, off the image. */
 .carousel-stories .carousel-stories-navigation-buttons button.slide-prev {
-  left: 20px;
+  left: -60px;
 }
 
 .carousel-stories .carousel-stories-navigation-buttons button.slide-next {
-  right: 20px;
+  right: -60px;
 }
 
 /* Arrow shaft — horizontal line across the button center. */
