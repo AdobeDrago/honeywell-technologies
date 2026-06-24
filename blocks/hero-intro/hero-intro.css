@@ -100,7 +100,7 @@
     grid-row: 2;
     display: flex;
     align-items: center;
-    padding: 80px;
+    padding: 32px;
   }
 
   .hero-intro .hero-intro-heading h1 {
@@ -108,8 +108,10 @@
     line-height: 72px;
   }
 
+  /* Source description: 20px / 30px, weight 400. */
   .hero-intro .hero-intro-desc p {
-    font-size: 16px;
-    line-height: 24px;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 400;
   }
 }
