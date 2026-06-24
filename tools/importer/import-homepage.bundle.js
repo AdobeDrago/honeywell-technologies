@@ -100,6 +100,19 @@ var CustomImportScript = (() => {
       element.replaceWith(...element.childNodes);
       return;
     }
+    const defaultContent = [];
+    const eyebrow = element.querySelector(".cmp-tile-grid__eyebrow, .cmp-tile-grid__header .eyebrow");
+    if (eyebrow && eyebrow.textContent.trim()) {
+      const p = document.createElement("p");
+      p.textContent = eyebrow.textContent.trim();
+      defaultContent.push(p);
+    }
+    const headerHeading = element.querySelector(".cmp-tile-grid__title, .cmp-tile-grid__header h1, .cmp-tile-grid__header h2, .cmp-tile-grid__header h3");
+    if (headerHeading && headerHeading.textContent.trim()) {
+      const heading = document.createElement(headerHeading.tagName.toLowerCase());
+      heading.textContent = headerHeading.textContent.trim();
+      defaultContent.push(heading);
+    }
     const cells = [];
     tiles.forEach((tile) => {
       const titleEl = tile.querySelector(".content-box .title, .title");
@@ -122,7 +135,7 @@ var CustomImportScript = (() => {
       return;
     }
     const block = WebImporter.Blocks.createBlock(document, { name: "cards-tiles", cells });
-    element.replaceWith(block);
+    element.replaceWith(...defaultContent, block);
   }
 
   // tools/importer/parsers/carousel-solutions.js
