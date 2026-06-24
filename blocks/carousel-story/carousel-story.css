@@ -1,8 +1,8 @@
-/* carousel-story -- "storytelling" scroll carousel.
+/* carousel-story -- "storytelling" stacked carousel.
    Design migrated from div.storytelling on honeywellbt.stage.honeywell.com.
-   Source layout @1440: full-height slide, image left (~65%, object-fit contain)
-   over a bottom-right gradient, dark text content right (~35%) on a light bg,
-   numeric slide counter top-left, thin vertical progress line. */
+   Slides are stacked; one is shown at a time. Moving the mouse advances to the
+   next slide, which animates diagonally in from the bottom-right to top-left
+   (replicating the source's parallax behavior). No prev/next arrows, no dots. */
 
 .carousel-story {
   position: relative;
@@ -16,24 +16,15 @@
 
 .carousel-story .carousel-story-slides-container {
   position: relative;
-}
-
-.carousel-story .carousel-story-slides,
-.carousel-story .carousel-story-slide-indicators {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+  overflow: hidden;
 }
 
 .carousel-story .carousel-story-slides {
-  display: flex;
-  scroll-behavior: smooth;
-  scroll-snap-type: x mandatory;
-  overflow: scroll clip;
-}
-
-.carousel-story .carousel-story-slides::-webkit-scrollbar {
-  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  min-height: 70vh;
 }
 
 /* numeric slide counter top-left (source: 24px / weight 300 / rgb(17,25,39)) */
@@ -41,7 +32,7 @@
   position: absolute;
   top: 16px;
   left: 16px;
-  z-index: 2;
+  z-index: 3;
   color: var(--link-color, rgb(17 25 39));
   font-family: var(--heading-font-family);
   font-size: 24px;
@@ -50,7 +41,7 @@
   pointer-events: none;
 }
 
-/* thin vertical progress line on the left (source track rgba(0,0,0,.15), thumb rgb(56,66,80)) */
+/* thin vertical progress line on the left (track + thumb that tracks active slide) */
 .carousel-story .carousel-story-slides-container::after {
   content: '';
   display: none;
@@ -68,21 +59,34 @@
   pointer-events: none;
 }
 
+/* All slides stacked in the same cell. Non-active slides are parked off to the
+   bottom-right and faded out; the active slide animates into place. */
 .carousel-story .carousel-story-slide {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
+  position: absolute;
+  inset: 0;
   display: flex;
   flex-direction: column-reverse;
-  position: relative;
   width: 100%;
   min-height: 70vh;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(8%, 12%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease;
   background-image: url('./storytelling-bg-br.png');
   background-color: rgb(245 245 245 / 50%);
-
-  /* soft corner glow confined to the bottom-right, not full-bleed */
   background-size: 55% auto;
   background-position: 100% 100%;
   background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.carousel-story .carousel-story-slide.is-active {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  transform: translate(0, 0);
+  pointer-events: auto;
+  z-index: 1;
 }
 
 /* image cell: object-fit contain so the transparent product PNG floats over the gradient */
@@ -128,83 +132,6 @@
   line-height: 24px;
 }
 
-/* indicators */
-.carousel-story .carousel-story-slide-indicators {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px 12px;
-  padding: 12px;
-  line-height: 0;
-}
-
-.carousel-story .carousel-story-slide-indicator button {
-  width: 12px;
-  height: 12px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background-color: rgb(0 0 0 / 15%);
-  transition: background-color 0.2s;
-}
-
-.carousel-story .carousel-story-slide-indicator button:disabled,
-.carousel-story .carousel-story-slide-indicator button:hover,
-.carousel-story .carousel-story-slide-indicator button:focus-visible {
-  background-color: rgb(56 66 80);
-}
-
-/* prev/next navigation arrows */
-.carousel-story .carousel-story-navigation-buttons {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  left: 12px;
-  right: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  z-index: 2;
-}
-
-/* stylelint-disable-next-line no-descending-specificity */
-.carousel-story .carousel-story-navigation-buttons button {
-  position: relative;
-  width: 44px;
-  height: 44px;
-  margin: 0;
-  border: 0;
-  border-radius: 50%;
-  padding: 0;
-  background-color: rgb(255 255 255 / 70%);
-  transition: background-color 0.2s;
-}
-
-.carousel-story .carousel-story-navigation-buttons button:hover,
-.carousel-story .carousel-story-navigation-buttons button:focus-visible {
-  background-color: rgb(255 255 255);
-}
-
-.carousel-story .carousel-story-navigation-buttons button::after {
-  display: block;
-  content: '';
-  border: 2px solid var(--link-color, rgb(17 25 39));
-  border-bottom: 0;
-  border-left: 0;
-  height: 10px;
-  width: 10px;
-  position: absolute;
-  top: 50%;
-  left: calc(50% + 2px);
-  transform: translate(-50%, -50%) rotate(-135deg);
-}
-
-.carousel-story .carousel-story-navigation-buttons button.slide-next::after {
-  transform: translate(-50%, -50%) rotate(45deg);
-  left: calc(50% - 2px);
-}
-
 @media (width >= 900px) {
   .carousel-story .carousel-story-slide-counter {
     top: 130px;
@@ -245,9 +172,11 @@
     margin: 284px 0 0;
     padding: 0 172px 0 0;
   }
+}
 
-  .carousel-story .carousel-story-navigation-buttons {
-    left: 24px;
-    right: 24px;
+@media (prefers-reduced-motion: reduce) {
+  .carousel-story .carousel-story-slide {
+    transition: opacity 0.3s ease;
+    transform: none;
   }
 }

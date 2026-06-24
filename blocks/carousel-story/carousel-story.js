@@ -1,79 +1,56 @@
 import { fetchPlaceholders } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
-function updateActiveSlide(slide) {
-  const block = slide.closest('.carousel-story');
-  const slideIndex = parseInt(slide.dataset.slideIndex, 10);
-  block.dataset.activeSlide = slideIndex;
-  block.style.setProperty('--active-slide', slideIndex);
+const ADVANCE_THROTTLE_MS = 1200;
+
+function setActiveSlide(block, slideIndex) {
+  const slides = block.querySelectorAll('.carousel-story-slide');
+  const realIndex = ((slideIndex % slides.length) + slides.length) % slides.length;
+  block.dataset.activeSlide = realIndex;
+  block.style.setProperty('--active-slide', realIndex);
 
   const counter = block.querySelector('.carousel-story-slide-counter');
-  if (counter) {
-    counter.textContent = String(slideIndex + 1).padStart(2, '0');
-  }
+  if (counter) counter.textContent = String(realIndex + 1).padStart(2, '0');
 
-  const slides = block.querySelectorAll('.carousel-story-slide');
-
-  slides.forEach((aSlide, idx) => {
-    aSlide.setAttribute('aria-hidden', idx !== slideIndex);
-    aSlide.querySelectorAll('a').forEach((link) => {
-      if (idx !== slideIndex) {
-        link.setAttribute('tabindex', '-1');
-      } else {
-        link.removeAttribute('tabindex');
-      }
+  slides.forEach((slide, idx) => {
+    const isActive = idx === realIndex;
+    slide.classList.toggle('is-active', isActive);
+    slide.setAttribute('aria-hidden', !isActive);
+    slide.querySelectorAll('a').forEach((link) => {
+      if (isActive) link.removeAttribute('tabindex');
+      else link.setAttribute('tabindex', '-1');
     });
-  });
-
-  const indicators = block.querySelectorAll('.carousel-story-slide-indicator');
-  indicators.forEach((indicator, idx) => {
-    if (idx !== slideIndex) {
-      indicator.querySelector('button').removeAttribute('disabled');
-    } else {
-      indicator.querySelector('button').setAttribute('disabled', 'true');
-    }
   });
 }
 
 export function showSlide(block, slideIndex = 0) {
-  const slides = block.querySelectorAll('.carousel-story-slide');
-  let realSlideIndex = slideIndex < 0 ? slides.length - 1 : slideIndex;
-  if (slideIndex >= slides.length) realSlideIndex = 0;
-  const activeSlide = slides[realSlideIndex];
-
-  activeSlide.querySelectorAll('a').forEach((link) => link.removeAttribute('tabindex'));
-  block.querySelector('.carousel-story-slides').scrollTo({
-    top: 0,
-    left: activeSlide.offsetLeft,
-    behavior: 'smooth',
-  });
+  setActiveSlide(block, slideIndex);
 }
 
 function bindEvents(block) {
-  const slideIndicators = block.querySelector('.carousel-story-slide-indicators');
-  if (!slideIndicators) return;
+  let lastAdvance = 0;
 
-  slideIndicators.querySelectorAll('button').forEach((button) => {
-    button.addEventListener('click', (e) => {
-      const slideIndicator = e.currentTarget.parentElement;
-      showSlide(block, parseInt(slideIndicator.dataset.targetSlide, 10));
-    });
-  });
+  const advance = () => {
+    const now = Date.now();
+    if (now - lastAdvance < ADVANCE_THROTTLE_MS) return;
+    lastAdvance = now;
+    setActiveSlide(block, parseInt(block.dataset.activeSlide || '0', 10) + 1);
+  };
 
-  block.querySelector('.slide-prev').addEventListener('click', () => {
-    showSlide(block, parseInt(block.dataset.activeSlide, 10) - 1);
-  });
-  block.querySelector('.slide-next').addEventListener('click', () => {
-    showSlide(block, parseInt(block.dataset.activeSlide, 10) + 1);
-  });
+  // Mouse movement over the carousel advances to the next slide, which slides
+  // in diagonally from the bottom-right (see .carousel-story-slide transitions).
+  block.addEventListener('mousemove', advance);
 
-  const slideObserver = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) updateActiveSlide(entry.target);
-    });
-  }, { threshold: 0.5 });
-  block.querySelectorAll('.carousel-story-slide').forEach((slide) => {
-    slideObserver.observe(slide);
+  // Keyboard accessibility: arrow keys advance/retreat.
+  block.setAttribute('tabindex', '0');
+  block.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      setActiveSlide(block, parseInt(block.dataset.activeSlide || '0', 10) + 1);
+      e.preventDefault();
+    } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      setActiveSlide(block, parseInt(block.dataset.activeSlide || '0', 10) - 1);
+      e.preventDefault();
+    }
   });
 }
 
@@ -119,44 +96,18 @@ export default async function decorate(block) {
 
   const slidesWrapper = document.createElement('ul');
   slidesWrapper.classList.add('carousel-story-slides');
-  block.prepend(slidesWrapper);
-
-  let slideIndicators;
-  if (!isSingleSlide) {
-    const slideIndicatorsNav = document.createElement('nav');
-    slideIndicatorsNav.setAttribute('aria-label', placeholders.carouselSlideControls || 'Carousel Slide Controls');
-    slideIndicators = document.createElement('ol');
-    slideIndicators.classList.add('carousel-story-slide-indicators');
-    slideIndicatorsNav.append(slideIndicators);
-    block.append(slideIndicatorsNav);
-
-    const slideNavButtons = document.createElement('div');
-    slideNavButtons.classList.add('carousel-story-navigation-buttons');
-    slideNavButtons.innerHTML = `
-      <button type="button" class= "slide-prev" aria-label="${placeholders.previousSlide || 'Previous Slide'}"></button>
-      <button type="button" class="slide-next" aria-label="${placeholders.nextSlide || 'Next Slide'}"></button>
-    `;
-
-    container.append(slideNavButtons);
-  }
 
   rows.forEach((row, idx) => {
     const slide = createSlide(row, idx, carouselId);
     moveInstrumentation(row, slide);
     slidesWrapper.append(slide);
-
-    if (slideIndicators) {
-      const indicator = document.createElement('li');
-      indicator.classList.add('carousel-story-slide-indicator');
-      indicator.dataset.targetSlide = idx;
-      indicator.innerHTML = `<button type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}"></button>`;
-      slideIndicators.append(indicator);
-    }
     row.remove();
   });
 
   container.append(slidesWrapper);
   block.prepend(container);
+
+  setActiveSlide(block, 0);
 
   if (!isSingleSlide) {
     bindEvents(block);
