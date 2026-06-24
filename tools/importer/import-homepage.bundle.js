@@ -172,6 +172,19 @@ var CustomImportScript = (() => {
       element.replaceWith(...element.childNodes);
       return;
     }
+    const defaultContent = [];
+    const eyebrow = element.querySelector(".carousel__header .eyebrow");
+    if (eyebrow && eyebrow.textContent.trim()) {
+      const p = document.createElement("p");
+      p.textContent = eyebrow.textContent.trim();
+      defaultContent.push(p);
+    }
+    const headerHeading = element.querySelector(".carousel__title, .carousel__header h1, .carousel__header h2, .carousel__header h3");
+    if (headerHeading && headerHeading.textContent.trim()) {
+      const heading = document.createElement(headerHeading.tagName.toLowerCase());
+      heading.textContent = headerHeading.textContent.trim();
+      defaultContent.push(heading);
+    }
     const cells = [];
     slides.forEach((slide) => {
       const image = slide.querySelector(".slide__image-container img, .wrapper__image img, img");
@@ -195,7 +208,7 @@ var CustomImportScript = (() => {
       cells.push([image || "", contentCell]);
     });
     const block = WebImporter.Blocks.createBlock(document, { name: "carousel-stories", cells });
-    element.replaceWith(block);
+    element.replaceWith(...defaultContent, block);
   }
 
   // tools/importer/parsers/cards-news.js

@@ -1,13 +1,14 @@
 import { fetchPlaceholders } from '../../scripts/aem.js';
 import { moveInstrumentation } from '../../ue/scripts/ue-utils.js';
 
+const AUTOPLAY_MS = 6000;
+
 function updateActiveSlide(slide) {
   const block = slide.closest('.carousel-stories');
   const slideIndex = parseInt(slide.dataset.slideIndex, 10);
   block.dataset.activeSlide = slideIndex;
 
   const slides = block.querySelectorAll('.carousel-stories-slide');
-
   slides.forEach((aSlide, idx) => {
     aSlide.setAttribute('aria-hidden', idx !== slideIndex);
     aSlide.querySelectorAll('a').forEach((link) => {
@@ -17,15 +18,6 @@ function updateActiveSlide(slide) {
         link.removeAttribute('tabindex');
       }
     });
-  });
-
-  const indicators = block.querySelectorAll('.carousel-stories-slide-indicator');
-  indicators.forEach((indicator, idx) => {
-    if (idx !== slideIndex) {
-      indicator.querySelector('button').removeAttribute('disabled');
-    } else {
-      indicator.querySelector('button').setAttribute('disabled', 'true');
-    }
   });
 }
 
@@ -43,17 +35,22 @@ export function showSlide(block, slideIndex = 0) {
   });
 }
 
+function startAutoplay(block) {
+  if (block.dataset.autoplayTimer) return;
+  const advance = () => {
+    showSlide(block, parseInt(block.dataset.activeSlide || '0', 10) + 1);
+  };
+  block.dataset.autoplayTimer = setInterval(advance, AUTOPLAY_MS);
+}
+
+function stopAutoplay(block) {
+  if (block.dataset.autoplayTimer) {
+    clearInterval(parseInt(block.dataset.autoplayTimer, 10));
+    delete block.dataset.autoplayTimer;
+  }
+}
+
 function bindEvents(block) {
-  const slideIndicators = block.querySelector('.carousel-stories-slide-indicators');
-  if (!slideIndicators) return;
-
-  slideIndicators.querySelectorAll('button').forEach((button) => {
-    button.addEventListener('click', (e) => {
-      const slideIndicator = e.currentTarget.parentElement;
-      showSlide(block, parseInt(slideIndicator.dataset.targetSlide, 10));
-    });
-  });
-
   block.querySelector('.slide-prev').addEventListener('click', () => {
     showSlide(block, parseInt(block.dataset.activeSlide, 10) - 1);
   });
@@ -69,6 +66,21 @@ function bindEvents(block) {
   block.querySelectorAll('.carousel-stories-slide').forEach((slide) => {
     slideObserver.observe(slide);
   });
+
+  // Autoplay — pause on hover/focus, resume on leave/blur.
+  block.addEventListener('mouseenter', () => stopAutoplay(block));
+  block.addEventListener('mouseleave', () => startAutoplay(block));
+  block.addEventListener('focusin', () => stopAutoplay(block));
+  block.addEventListener('focusout', () => startAutoplay(block));
+
+  // Pause when off-screen, resume when visible.
+  const visibilityObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) startAutoplay(block);
+      else stopAutoplay(block);
+    });
+  }, { threshold: 0.2 });
+  visibilityObserver.observe(block);
 }
 
 function createSlide(row, slideIndex, carouselId) {
@@ -109,22 +121,13 @@ export default async function decorate(block) {
   slidesWrapper.classList.add('carousel-stories-slides');
   block.prepend(slidesWrapper);
 
-  let slideIndicators;
   if (!isSingleSlide) {
-    const slideIndicatorsNav = document.createElement('nav');
-    slideIndicatorsNav.setAttribute('aria-label', placeholders.carouselSlideControls || 'Carousel Slide Controls');
-    slideIndicators = document.createElement('ol');
-    slideIndicators.classList.add('carousel-stories-slide-indicators');
-    slideIndicatorsNav.append(slideIndicators);
-    block.append(slideIndicatorsNav);
-
     const slideNavButtons = document.createElement('div');
     slideNavButtons.classList.add('carousel-stories-navigation-buttons');
     slideNavButtons.innerHTML = `
-      <button type="button" class= "slide-prev" aria-label="${placeholders.previousSlide || 'Previous Slide'}"></button>
+      <button type="button" class="slide-prev" aria-label="${placeholders.previousSlide || 'Previous Slide'}"></button>
       <button type="button" class="slide-next" aria-label="${placeholders.nextSlide || 'Next Slide'}"></button>
     `;
-
     container.append(slideNavButtons);
   }
 
@@ -132,14 +135,6 @@ export default async function decorate(block) {
     const slide = createSlide(row, idx, carouselId);
     moveInstrumentation(row, slide);
     slidesWrapper.append(slide);
-
-    if (slideIndicators) {
-      const indicator = document.createElement('li');
-      indicator.classList.add('carousel-stories-slide-indicator');
-      indicator.dataset.targetSlide = idx;
-      indicator.innerHTML = `<button type="button" aria-label="${placeholders.showSlide || 'Show Slide'} ${idx + 1} ${placeholders.of || 'of'} ${rows.length}"></button>`;
-      slideIndicators.append(indicator);
-    }
     row.remove();
   });
 
@@ -148,5 +143,6 @@ export default async function decorate(block) {
 
   if (!isSingleSlide) {
     bindEvents(block);
+    startAutoplay(block);
   }
 }

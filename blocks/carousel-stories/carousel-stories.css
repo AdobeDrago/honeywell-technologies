@@ -1,34 +1,62 @@
-/* Block: carousel-stories — Customer Stories full-width image carousel
+/* Block: carousel-stories — "Customer Stories" image carousel
  * Values extracted from source computed styles (honeywellbt.stage.honeywell.com/us/en).
- * Source design per slide: full-bleed background image (1266x600) with a
- * left-aligned content overlay panel (480px wide, full height) on a translucent
- * dark scrim, white text, vertically centered. Full-height nav arrow bars sit at
- * the left and right edges of the slide.
+ * Source: a light-gray band (rgb(247 247 247)) holding a header (eyebrow + h2)
+ * above a slide track. Each slide is a fixed-height image with a 480px content
+ * panel overlaid on the left over a dark gradient scrim; white text and a black
+ * pill CTA. Thin gray chevron arrows sit in the side gutters. No dot indicators.
  */
 
-/* Full-bleed: escape the 1200px section wrapper. */
-.carousel-stories-wrapper {
-  max-width: 100% !important;
-  padding: 0 !important;
+/* Full-width gray band. The block lives in the standard section wrapper, but the
+ * source band runs edge to edge, so escape the global max-width and pad the band. */
+main > .section > .carousel-stories-wrapper {
+  max-width: none;
+  padding: 0;
+  background-color: rgb(247 247 247);
+}
+
+/* Section header (eyebrow + heading) -- imported as default content immediately
+ * before the block, sharing the gray band. */
+main > .section > .default-content-wrapper:has(+ .carousel-stories-wrapper) {
+  max-width: none;
+  margin: 0;
+  padding: 48px 80px 0;
+  box-sizing: border-box;
+  background-color: rgb(247 247 247);
+}
+
+.default-content-wrapper:has(+ .carousel-stories-wrapper) p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 24px;
+  color: rgb(33 37 41);
+}
+
+.default-content-wrapper:has(+ .carousel-stories-wrapper) h2 {
+  margin: 16px 0 0;
+  font-family: var(--heading-font-family);
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 44px;
+  letter-spacing: normal;
+  color: rgb(33 37 41);
 }
 
 .carousel-stories {
   position: relative;
-  background-color: rgb(20 20 20);
+  padding: 24px 80px 120px;
+  background-color: rgb(247 247 247);
 }
 
 .carousel-stories .carousel-stories-slides-container {
   position: relative;
 }
 
-.carousel-stories .carousel-stories-slides,
-.carousel-stories .carousel-stories-slide-indicators {
+.carousel-stories .carousel-stories-slides {
   list-style: none;
   margin: 0;
   padding: 0;
-}
-
-.carousel-stories .carousel-stories-slides {
   display: flex;
   scroll-behavior: smooth;
   scroll-snap-type: x mandatory;
@@ -39,7 +67,7 @@
   display: none;
 }
 
-/* --- Slide: full-bleed image with overlaid content panel --- */
+/* --- Slide: image with overlaid content panel --- */
 .carousel-stories .carousel-stories-slide {
   flex: 0 0 100%;
   scroll-snap-align: start;
@@ -54,11 +82,9 @@
   box-sizing: border-box;
 }
 
-/* --- Background image fills the whole slide --- */
 .carousel-stories .carousel-stories-slide-image {
   position: relative;
   width: 100%;
-  height: 100%;
   margin: 0;
 }
 
@@ -70,7 +96,7 @@
   object-fit: cover;
 }
 
-/* --- Content panel: translucent dark scrim, white text --- */
+/* --- Content panel: dark gradient scrim, white text --- */
 .carousel-stories .carousel-stories-slide-content {
   display: flex;
   flex-direction: column;
@@ -78,32 +104,32 @@
   align-items: flex-start;
   width: 100%;
   padding: 40px 24px;
-  background-color: rgb(0 0 0 / 45%);
+  background-color: rgb(20 20 20);
   color: rgb(255 255 255);
 }
 
 .carousel-stories .carousel-stories-slide-content h2 {
   margin: 0;
   font-family: var(--heading-font-family);
-  font-size: var(--heading-font-size-l);
+  font-size: 24px;
   font-weight: 400;
-  line-height: 1.27;
+  line-height: 32px;
   color: rgb(255 255 255);
   letter-spacing: normal;
 }
 
 .carousel-stories .carousel-stories-slide-content p {
-  margin: 16px 0;
-  font-size: var(--body-font-size-m);
-  line-height: 1.5;
+  margin: 16px 0 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  line-height: 24px;
   font-weight: 400;
   color: rgb(255 255 255);
 }
 
-/* "View Customer Story" — plain text link with chevron, NOT a pill button.
- * Reset EDS auto-decorated .button / .button-container. */
+/* "View Customer Story" — black pill button. */
 .carousel-stories .carousel-stories-slide-content .button-container {
-  margin: 0;
+  margin: 24px 0 0;
 }
 
 .carousel-stories .carousel-stories-slide-content a.button:any-link {
@@ -111,26 +137,26 @@
   align-items: center;
   gap: 8px;
   margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 0;
-  background: none;
-  color: rgb(0 123 255);
+  padding: 9px 16px;
+  border: 1px solid rgb(210 214 219);
+  border-radius: 12px;
+  background-color: rgb(15 15 15);
+  color: rgb(255 255 255);
   font-family: var(--body-font-family);
-  font-size: var(--body-font-size-xs);
-  font-weight: 300;
+  font-size: 16px;
+  font-weight: 500;
   line-height: 1.5;
   text-align: left;
   text-decoration: none;
   text-transform: none;
-  white-space: normal;
+  white-space: nowrap;
 }
 
 .carousel-stories .carousel-stories-slide-content a.button:any-link::after {
   content: "";
   display: inline-block;
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
   border: 1.5px solid currentcolor;
   border-bottom: 0;
   border-left: 0;
@@ -138,92 +164,64 @@
 }
 
 .carousel-stories .carousel-stories-slide-content a.button:any-link:hover {
-  text-decoration: underline;
-  background: none;
+  background-color: rgb(40 40 40);
 }
 
-/* --- Navigation arrows: full-height bars at the slide edges --- */
+/* --- Navigation arrows: thin gray chevrons in the side gutters --- */
 .carousel-stories .carousel-stories-navigation-buttons {
   position: absolute;
   inset: 0;
-  display: flex;
-  align-items: stretch;
-  justify-content: space-between;
-  height: 100%;
   pointer-events: none;
   z-index: 2;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 .carousel-stories .carousel-stories-navigation-buttons button {
-  position: relative;
-  width: 44px;
-  height: 100%;
+  position: absolute;
+  top: 50%;
+  width: 40px;
+  height: 40px;
   margin: 0;
   padding: 0;
   border: 0;
-  border-radius: 0;
-  background-color: rgb(255 255 255 / 20%);
+  background: none;
   pointer-events: auto;
   cursor: pointer;
-  transition: background-color 0.2s;
+  transform: translateY(-50%);
 }
 
-.carousel-stories .carousel-stories-navigation-buttons button:hover,
-.carousel-stories .carousel-stories-navigation-buttons button:focus-visible {
-  background-color: rgb(255 255 255 / 35%);
+.carousel-stories .carousel-stories-navigation-buttons button.slide-prev {
+  left: 20px;
+}
+
+.carousel-stories .carousel-stories-navigation-buttons button.slide-next {
+  right: 20px;
 }
 
 .carousel-stories .carousel-stories-navigation-buttons button::after {
   display: block;
   content: '';
-  border: 2px solid #fff;
-  border-bottom: 0;
-  border-left: 0;
-  height: 12px;
-  width: 12px;
   position: absolute;
   top: 50%;
-  left: calc(50% + 2px);
+  left: 50%;
+  width: 14px;
+  height: 14px;
+  border: 2px solid rgb(120 120 120);
+  border-bottom: 0;
+  border-left: 0;
   transform: translate(-50%, -50%) rotate(-135deg);
 }
 
 .carousel-stories .carousel-stories-navigation-buttons button.slide-next::after {
   transform: translate(-50%, -50%) rotate(45deg);
-  left: calc(50% - 2px);
 }
 
-/* --- Slide indicator dots --- */
-.carousel-stories .carousel-stories-slide-indicators {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 6px 12px;
-  padding: 16px 12px;
-  background-color: rgb(20 20 20);
-  line-height: 0;
+.carousel-stories .carousel-stories-navigation-buttons button:hover::after,
+.carousel-stories .carousel-stories-navigation-buttons button:focus-visible::after {
+  border-color: rgb(33 37 41);
 }
 
-/* stylelint-disable-next-line no-descending-specificity */
-.carousel-stories .carousel-stories-slide-indicator button {
-  width: 10px;
-  height: 10px;
-  margin: 0;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background-color: rgb(255 255 255 / 35%);
-  cursor: pointer;
-  transition: background-color 0.2s;
-}
-
-.carousel-stories .carousel-stories-slide-indicator button:disabled,
-.carousel-stories .carousel-stories-slide-indicator button:hover,
-.carousel-stories .carousel-stories-slide-indicator button:focus-visible {
-  background-color: rgb(255 255 255);
-}
-
-/* --- Desktop: image fills slide, content overlay panel on the left --- */
+/* --- Desktop: image-fill slide with content overlay panel on the left --- */
 @media (width >= 900px) {
   .carousel-stories .carousel-stories-slide {
     flex-direction: row;
@@ -243,8 +241,14 @@
     flex: 0 0 480px;
     width: 480px;
     max-width: 480px;
-    height: 600px;
+    min-height: 600px;
     padding: 80px 40px;
+
+    /* Dark gradient scrim, fading to transparent toward the image. */
+    background-color: transparent;
+    background-image:
+      linear-gradient(262.35deg, rgb(96 22 181 / 0%) 0.11%, rgb(96 22 181 / 20%) 96.34%),
+      linear-gradient(270deg, rgb(0 0 0 / 0%) 40.3%, rgb(0 0 0 / 70%) 67.16%);
   }
 
   .carousel-stories .carousel-stories-slide-content h2 {
@@ -255,9 +259,5 @@
   .carousel-stories .carousel-stories-slide-content p {
     font-size: 20px;
     line-height: 30px;
-  }
-
-  .carousel-stories .carousel-stories-navigation-buttons button {
-    width: 68px;
   }
 }
