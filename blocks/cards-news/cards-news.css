@@ -56,8 +56,10 @@ main > .section > .cards-news-wrapper {
 }
 
 @media (width >= 900px) {
+  /* Source side inset is 72px (32px section gutter + 40px grid padding); header
+     and cards align at that 72px edge. */
   .default-content-wrapper:has(+ .cards-news-wrapper) {
-    padding: 64px 40px 0;
+    padding: 64px 72px 0;
   }
 
   .default-content-wrapper:has(+ .cards-news-wrapper) h3 {
@@ -66,7 +68,7 @@ main > .section > .cards-news-wrapper {
   }
 
   .cards-news {
-    padding: 64px 40px;
+    padding: 64px 72px;
   }
 }
 
