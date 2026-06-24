@@ -4,14 +4,54 @@
    Card image 411x474 (cover, hover zoom).
    Title h3 24/32 rgb(56 66 80); desc 14/20 rgb(56 66 80). */
 
-/* block padding (source: 64px 40px) -- mobile-first */
+/* Section header (eyebrow + heading) -- imported as default content
+   immediately before the block. Source: header padding 0 0 48px, inside the
+   block's 64px 40px padding. We reproduce that rhythm by giving the header the
+   block's top/side spacing and letting the block supply the 48px gap below. */
+.default-content-wrapper:has(+ .cards-news-wrapper) {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 24px 0;
+  box-sizing: border-box;
+}
+
+.default-content-wrapper:has(+ .cards-news-wrapper) p {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  color: rgb(82 82 82);
+}
+
+.default-content-wrapper:has(+ .cards-news-wrapper) h3 {
+  margin: 4px 0 0;
+  font-family: var(--heading-font-family);
+  font-size: 28px;
+  font-weight: 400;
+  line-height: 36px;
+  letter-spacing: normal;
+  color: rgb(20 20 20);
+}
+
+/* block padding (source: 64px 40px) -- mobile-first.
+   Top padding is the 48px header-to-cards gap when a header precedes it. */
 .cards-news {
-  padding: 40px 24px;
+  padding: 24px 24px 40px;
 }
 
 @media (width >= 900px) {
+  .default-content-wrapper:has(+ .cards-news-wrapper) {
+    padding: 64px 40px 0;
+  }
+
+  .default-content-wrapper:has(+ .cards-news-wrapper) h3 {
+    font-size: 36px;
+    line-height: 44px;
+  }
+
   .cards-news {
-    padding: 64px 40px;
+    padding: 48px 40px 64px;
   }
 }
 

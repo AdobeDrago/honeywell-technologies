@@ -205,6 +205,19 @@ var CustomImportScript = (() => {
       element.replaceWith(...element.childNodes);
       return;
     }
+    const defaultContent = [];
+    const eyebrow = element.querySelector(".business-grid__eyebrow");
+    if (eyebrow && eyebrow.textContent.trim()) {
+      const p = document.createElement("p");
+      p.textContent = eyebrow.textContent.trim();
+      defaultContent.push(p);
+    }
+    const headerHeading = element.querySelector(".business-grid__title, .business-grid__header h1, .business-grid__header h2, .business-grid__header h3");
+    if (headerHeading && headerHeading.textContent.trim()) {
+      const heading = document.createElement(headerHeading.tagName.toLowerCase());
+      heading.textContent = headerHeading.textContent.trim();
+      defaultContent.push(heading);
+    }
     const cells = [];
     items.forEach((item) => {
       const anchor = item.querySelector("a.business-grid-item__container, a[href]");
@@ -230,7 +243,7 @@ var CustomImportScript = (() => {
       cells.push([image || "", contentCell]);
     });
     const block = WebImporter.Blocks.createBlock(document, { name: "cards-news", cells });
-    element.replaceWith(block);
+    element.replaceWith(...defaultContent, block);
   }
 
   // tools/importer/parsers/hero-promo.js
