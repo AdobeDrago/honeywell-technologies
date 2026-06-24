@@ -19,6 +19,10 @@ main > .section > .carousel-solutions-wrapper {
 
   position: relative;
   background-color: var(--background-color);
+
+  /* Source .solutions-carousel__inner has margin-top: 80px above the cards,
+     giving the gap below the preceding tile grid. */
+  padding-top: 80px;
 }
 
 @media (width >= 900px) {
