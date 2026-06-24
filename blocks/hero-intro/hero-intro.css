@@ -1,5 +1,12 @@
-/* hero-intro -- homepage top hero (intro heading + paragraph)
- * Values extracted from source computed styles (honeywellbt.stage.honeywell.com). */
+/* hero-intro -- homepage top hero
+ * Source: .cmp-secondary-hero (honeywellbt.stage.honeywell.com).
+ * A 2x2 grid: heading (top-left, wider column), gradient media (top-right),
+ * gradient media (bottom-left), intro paragraph (bottom-right).
+ * Source grid: columns 831.594px / 593.984px (~1.4fr / 1fr), rows 564px / 336px.
+ * The two media quadrants are decorative brand gradient PNGs
+ * (hero-left-box-bg.png / hero-right-box-bg.png) -- CORS-blocked on localhost,
+ * so reproduced here with CSS gradients.
+ */
 
 /* Full-width: override the section wrapper max-width/padding */
 .hero-intro-container .hero-intro-wrapper {
@@ -7,70 +14,101 @@
   padding: 0;
 }
 
-/* Intro container (.cmp-secondary-hero on source): full-bleed 2-column grid.
-   Source grid-template-columns: 831.594px 593.984px (~1.4fr 1fr) at 1440px;
-   text card (.editorial-box-b) is the left column with 80px padding, the
-   right column is a reserved media slot. Content here is text-only, so the
-   right column stays empty but the text column keeps its constrained width
-   and offset rather than spanning full width. */
 .hero-intro {
   background-color: var(--background-color);
   color: var(--text-color);
-  min-height: 400px;
 }
 
-/* Mobile: single column, the cell carries the source's 80px-equivalent
-   horizontal/vertical inset scaled down for small screens. */
-.hero-intro > div > div {
+/* Mobile-first: single column. Order = heading, top-right media, bottom-left
+   media, description (matches DOM order). */
+.hero-intro .hero-intro-heading,
+.hero-intro .hero-intro-desc {
   padding: 40px 24px;
+  box-sizing: border-box;
 }
 
-/* Heading (.cmp-secondary-hero__heading): 60px / 72px, weight 300, near-black */
-.hero-intro h1 {
+.hero-intro .hero-intro-media {
+  width: 100%;
+  min-height: 200px;
+}
+
+/* Top-right quadrant: red (lower-left) sweeping through magenta/purple to a
+   light lavender toward the upper-right -- darker on the left & bottom. */
+.hero-intro .hero-intro-media-tr {
+  background-color: #e6e2f5;
+  background-image:
+    radial-gradient(120% 120% at 0% 100%, #e30613 0%, #d61773 26%, #8a2be2 50%, rgb(138 43 226 / 25%) 68%, rgb(230 226 245 / 0%) 82%),
+    linear-gradient(135deg, rgb(230 226 245) 0%, rgb(243 240 250) 100%);
+}
+
+/* Bottom-left quadrant: red at the left edge fading to near-white on the right. */
+.hero-intro .hero-intro-media-bl {
+  background-color: #fff;
+  background-image:
+    radial-gradient(130% 120% at 0% 60%, #e30613 0%, #ef5a6b 28%, #f8c4cb 50%, rgb(255 255 255 / 0%) 72%);
+}
+
+.hero-intro .hero-intro-heading h1 {
   font-family: var(--heading-font-family);
   font-size: var(--heading-font-size-xxl);
   font-weight: 300;
   line-height: 1.1;
   letter-spacing: normal;
   color: rgb(0 0 0);
-  margin: 12px 0 0;
+  margin: 0;
 }
 
-/* Intro paragraph (.description): 16px / 24px, weight 300 */
-.hero-intro p {
+.hero-intro .hero-intro-desc p {
   font-family: var(--body-font-family);
   font-size: var(--body-font-size-s);
   font-weight: 300;
   line-height: 1.5;
   color: var(--text-color);
-  margin: 0 0 16px;
+  margin: 0;
 }
 
-/* No-image variant keeps body text colors (no override needed here,
-   colors are already set above for the white-background design). */
-
 @media (width >= 900px) {
-  /* Source: .cmp-secondary-hero grid = 831.594px / 593.984px ≈ 1.4fr / 1fr.
-     The block row becomes the grid; the single content cell sits in the
-     left column, the right column is the reserved (empty) media slot. */
-  .hero-intro > div {
+  /* 2x2 grid: wider left column, taller top row -- matches source proportions. */
+  .hero-intro {
     display: grid;
     grid-template-columns: 1.4fr 1fr;
-    align-items: center;
+    grid-template-rows: 564px 336px;
   }
 
-  /* Text card (.editorial-box-b): 80px padding all sides on source. */
-  .hero-intro > div > div {
+  .hero-intro .hero-intro-heading {
     grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    align-items: flex-start;
     padding: 80px;
   }
 
-  .hero-intro h1 {
+  .hero-intro .hero-intro-media-tr {
+    grid-column: 2;
+    grid-row: 1;
+    height: 100%;
+  }
+
+  .hero-intro .hero-intro-media-bl {
+    grid-column: 1;
+    grid-row: 2;
+    height: 100%;
+  }
+
+  .hero-intro .hero-intro-desc {
+    grid-column: 2;
+    grid-row: 2;
+    display: flex;
+    align-items: center;
+    padding: 80px;
+  }
+
+  .hero-intro .hero-intro-heading h1 {
     font-size: 60px;
     line-height: 72px;
   }
 
-  .hero-intro p {
+  .hero-intro .hero-intro-desc p {
     font-size: 16px;
     line-height: 24px;
   }
