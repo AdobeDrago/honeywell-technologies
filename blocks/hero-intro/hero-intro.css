@@ -79,7 +79,10 @@
     grid-column: 1;
     grid-row: 1;
     display: flex;
-    align-items: flex-start;
+
+    /* Source .editorial-box-b uses place-content: end -- the heading sits at the
+       bottom of the cell (80px bottom padding). */
+    align-items: flex-end;
     padding: 80px;
   }
 
