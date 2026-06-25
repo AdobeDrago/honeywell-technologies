@@ -18,7 +18,11 @@ main > .section > .carousel-stories-wrapper {
  * before the block, sharing the gray band. */
 main > .section > .default-content-wrapper:has(+ .carousel-stories-wrapper) {
   max-width: none;
-  margin: 0;
+
+  /* Source: ~80px of white space separates the preceding (white) block from the
+     top of the gray band; the band itself then adds 48px above the eyebrow. The
+     margin sits outside the gray background so it renders as white page space. */
+  margin: 80px 0 0;
   padding: 48px 80px 0;
   box-sizing: border-box;
   background-color: rgb(247 247 247);
@@ -262,27 +266,21 @@ main > .section > .default-content-wrapper:has(+ .carousel-stories-wrapper) {
     height: 100%;
   }
 
-  /* Full-slide gradient scrim: darkest at the left (under the text), fading to
-     transparent over the image — matches the source's content-wrapper overlay. */
-  .carousel-stories .carousel-stories-slide-image::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    background-image:
-      linear-gradient(262.35deg, rgb(96 22 181 / 0%) 0.11%, rgb(96 22 181 / 20%) 96.34%),
-      linear-gradient(270deg, rgb(0 0 0 / 0%) 40.3%, rgb(0 0 0 / 70%) 67.16%);
-  }
-
+  /* Frosted-glass content panel over the image (source: .slide__content-wrapper
+     background rgba(255,255,255,0.1) + backdrop-filter blur(16px)). The blur over
+     the photo is what makes the left column read as a defined, darker panel. */
   .carousel-stories .carousel-stories-slide-content {
-    position: relative;
+    position: absolute;
+    inset: 0 auto 0 0;
     z-index: 2;
     flex: 0 0 480px;
     width: 480px;
     max-width: 480px;
     min-height: 600px;
+    height: 100%;
     padding: 80px 40px;
-    background-color: transparent;
+    background-color: rgb(255 255 255 / 10%);
+    backdrop-filter: blur(16px);
   }
 
   .carousel-stories .carousel-stories-slide-content h2 {
