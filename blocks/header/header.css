@@ -261,12 +261,37 @@ header nav .nav-flyout-promo-card-dark .nav-flyout-promo-cta:hover {
   background: rgb(255 255 255 / 12%);
 }
 
-/* Tools (hamburger + slide-in panel) */
-header nav .nav-tools {
+/* Desktop utility links (locale, Contact, Support) on the right. */
+header nav .nav-utility {
   flex: 0 0 auto;
   display: flex;
   align-items: center;
-  margin-left: auto;
+  gap: 28px;
+  list-style: none;
+  margin: 0 0 0 auto;
+  padding: 0;
+}
+
+header nav .nav-utility-link {
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgb(66 66 66);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+header nav .nav-utility-link:hover {
+  color: var(--link-hover-color);
+}
+
+/* Tools (hamburger + slide-in panel) -- hamburger is desktop-hidden; the
+   utility links take the right side. The drawer is mobile-only. */
+header nav .nav-tools {
+  flex: 0 0 auto;
+  display: none;
+  align-items: center;
+  margin-left: 24px;
 }
 
 header nav .nav-hamburger {
@@ -550,9 +575,16 @@ header nav .nav-mobile-acc-panel a:hover {
     gap: 12px;
   }
 
-  /* hide desktop menubar; nav lives in the slide-in drawer on mobile */
-  header nav .nav-sections {
+  /* hide desktop menubar + utility links; nav lives in the slide-in drawer */
+  header nav .nav-sections,
+  header nav .nav-utility {
     display: none;
+  }
+
+  /* the hamburger (tools) is the mobile entry point */
+  header nav .nav-tools {
+    display: flex;
+    margin-left: auto;
   }
 
   /* drawer goes full-width on mobile and shows the main-nav accordion */

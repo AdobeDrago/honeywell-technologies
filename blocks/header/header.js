@@ -403,6 +403,28 @@ export default async function decorate(block) {
   if (sourceMainUl) sectionsWrap.append(buildMainNav(sourceMainUl, nav));
   nav.append(sectionsWrap);
 
+  // Desktop utility links (locale, Contact, Support) shown on the right. Built
+  // from the panel section's top-level items; the same source also feeds the
+  // mobile slide-in panel. Hidden on mobile via CSS, where the drawer takes over.
+  const sourcePanelUl = panelSection ? panelSection.querySelector(':scope > ul') : null;
+  if (sourcePanelUl) {
+    const utility = document.createElement('ul');
+    utility.className = 'nav-utility';
+    Array.from(sourcePanelUl.children).forEach((li) => {
+      const a = ownLink(li);
+      if (!a) return;
+      const item = document.createElement('li');
+      item.className = 'nav-utility-item';
+      const link = document.createElement('a');
+      link.className = 'nav-utility-link';
+      link.href = a.getAttribute('href');
+      link.textContent = a.textContent.trim();
+      item.append(link);
+      utility.append(item);
+    });
+    nav.append(utility);
+  }
+
   // Tools: hamburger + slide-in panel
   const tools = document.createElement('div');
   tools.className = 'nav-tools';
@@ -422,7 +444,6 @@ export default async function decorate(block) {
   // full-width on mobile.
   let panelApi = null;
   if (panelSection) {
-    const sourcePanelUl = panelSection.querySelector(':scope > ul');
     if (sourcePanelUl) {
       panelApi = buildSlidePanel(sourcePanelUl, sourceMainUl);
       nav.append(panelApi.panel);
