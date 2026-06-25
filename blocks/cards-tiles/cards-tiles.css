@@ -20,7 +20,10 @@ main > .section > .cards-tiles-wrapper {
 main > .section > .default-content-wrapper:has(+ .cards-tiles-wrapper) {
   max-width: none;
   margin: 0;
-  padding: 0 72px;
+
+  /* Source .cmp-tile-grid__layout has 64px top padding above the eyebrow,
+     giving the gap below the preceding block. */
+  padding: 64px 72px 0;
   box-sizing: border-box;
 }
 
