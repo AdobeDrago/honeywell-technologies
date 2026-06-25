@@ -31,6 +31,15 @@ function fixImagePath(img) {
   return img;
 }
 
+/**
+ * Get an <li>'s own link, tolerating a <p> wrapper. Plain-HTML pipelines differ:
+ * localhost/aem serves bare `<li><a>`, while DA/EDS production wraps the link in
+ * a paragraph (`<li><p><a>`). Matching both keeps the nav working everywhere.
+ */
+function ownLink(li) {
+  return li.querySelector(':scope > a, :scope > p > a');
+}
+
 /** Close any open desktop flyout. */
 function closeAllFlyouts(nav) {
   nav.querySelectorAll('.nav-main-item.has-flyout[aria-expanded="true"]').forEach((li) => {
@@ -46,7 +55,7 @@ function buildMainNav(sourceUl, nav) {
   menubar.className = 'nav-main';
 
   Array.from(sourceUl.children).forEach((li) => {
-    const topLink = li.querySelector(':scope > a');
+    const topLink = ownLink(li);
     const groupUls = li.querySelectorAll(':scope > ul');
     const item = document.createElement('li');
     item.className = 'nav-main-item';
@@ -72,7 +81,7 @@ function buildMainNav(sourceUl, nav) {
         col.className = hasImages ? 'nav-flyout-col nav-flyout-featured' : 'nav-flyout-col';
         const colList = document.createElement('ul');
         Array.from(ul.children).forEach((sourceLi) => {
-          const a = sourceLi.querySelector(':scope > a');
+          const a = ownLink(sourceLi);
           if (!a) return;
           const cell = document.createElement('li');
           const link = document.createElement('a');
@@ -147,7 +156,7 @@ function buildSlidePanel(sourceUl, mainNavUl) {
     const acc = document.createElement('ul');
     acc.className = 'nav-mobile-accordion';
     Array.from(ul.children).forEach((li) => {
-      const a = li.querySelector(':scope > a');
+      const a = ownLink(li);
       const groupUls = li.querySelectorAll(':scope > ul');
       const row = document.createElement('li');
       if (groupUls.length) {
@@ -161,7 +170,7 @@ function buildSlidePanel(sourceUl, mainNavUl) {
         groupUls.forEach((g) => {
           const subUl = document.createElement('ul');
           Array.from(g.children).forEach((sLi) => {
-            const sa = sLi.querySelector(':scope > a');
+            const sa = ownLink(sLi);
             if (!sa) return;
             const sItem = document.createElement('li');
             const sLink = document.createElement('a');
@@ -220,7 +229,7 @@ function buildSlidePanel(sourceUl, mainNavUl) {
 
     const list = document.createElement('ul');
     Array.from(ul.children).forEach((li) => {
-      const a = li.querySelector(':scope > a');
+      const a = ownLink(li);
       const childUl = li.querySelector(':scope > ul');
       const row = document.createElement('li');
       if (childUl) {
@@ -249,7 +258,7 @@ function buildSlidePanel(sourceUl, mainNavUl) {
   }
 
   Array.from(sourceUl.children).forEach((li) => {
-    const a = li.querySelector(':scope > a');
+    const a = ownLink(li);
     const childUl = li.querySelector(':scope > ul');
     const row = document.createElement('li');
     if (childUl) {
