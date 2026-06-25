@@ -125,34 +125,39 @@ header nav .nav-flyout-col a:hover {
   text-decoration: underline;
 }
 
-/* Featured cards column (images) */
+/* Featured cards column (images) -- fixed-width panel docked to the right. */
 header nav .nav-flyout-featured {
-  flex: 1 1 auto;
+  flex: 0 0 420px;
+  width: 420px;
   margin-left: auto;
 }
 
+/* Source: the Newsroom column is a vertical list of cards, each with a
+   thumbnail on the left and a 2-line title on the right. */
 header nav .nav-flyout-featured ul {
-  flex-direction: row;
-  gap: 20px;
+  flex-direction: column;
+  gap: 24px;
 }
 
 header nav .nav-flyout-featured li {
-  flex: 1 1 0;
-  max-width: 220px;
+  flex: 0 0 auto;
+  max-width: none;
 }
 
 /* stylelint-disable-next-line no-descending-specificity */
 header nav .nav-flyout-card a {
   display: flex;
-  flex-direction: column;
-  gap: 10px;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
   font-size: 14px;
   font-weight: 500;
 }
 
 header nav .nav-flyout-card img {
-  width: 100%;
-  height: 132px;
+  flex: 0 0 auto;
+  width: 140px;
+  height: 80px;
   object-fit: cover;
   display: block;
 }
