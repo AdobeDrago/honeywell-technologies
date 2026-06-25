@@ -59,6 +59,12 @@ function buildPromoCard(li, img) {
   const card = document.createElement('div');
   card.className = 'nav-flyout-promo-card';
 
+  // Dark-background promos (e.g. Solutions > Honeywell Forge) use white text and
+  // an outlined CTA; light promos (e.g. People) keep dark text on a white pill.
+  if (/dark/i.test(img.getAttribute('src') || '')) {
+    card.classList.add('nav-flyout-promo-card-dark');
+  }
+
   const picture = (img.closest('picture') || img).cloneNode(true);
   picture.querySelectorAll('img').forEach(fixImagePath);
   if (picture.tagName === 'IMG') fixImagePath(picture);

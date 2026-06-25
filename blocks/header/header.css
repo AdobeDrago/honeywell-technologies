@@ -244,6 +244,23 @@ header nav .nav-flyout-promo-cta:hover {
   background: rgb(246 245 245);
 }
 
+/* Dark promo (e.g. Solutions > Honeywell Forge): white text on a dark image,
+   outlined transparent CTA. */
+header nav .nav-flyout-promo-card-dark .nav-flyout-promo-eyebrow,
+header nav .nav-flyout-promo-card-dark .nav-flyout-promo-heading {
+  color: #fff;
+}
+
+header nav .nav-flyout-promo-card-dark .nav-flyout-promo-cta {
+  border-color: rgb(255 255 255 / 60%);
+  background: transparent;
+  color: #fff;
+}
+
+header nav .nav-flyout-promo-card-dark .nav-flyout-promo-cta:hover {
+  background: rgb(255 255 255 / 12%);
+}
+
 /* Tools (hamburger + slide-in panel) */
 header nav .nav-tools {
   flex: 0 0 auto;
