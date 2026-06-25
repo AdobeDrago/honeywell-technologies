@@ -28,27 +28,38 @@ export function showSlide(block, slideIndex = 0) {
 }
 
 function bindEvents(block) {
+  const slideCount = block.querySelectorAll('.carousel-story-slide').length;
   let lastAdvance = 0;
 
-  const advance = () => {
+  const current = () => parseInt(block.dataset.activeSlide || '0', 10);
+
+  // Scrolling down advances to the next slide; scrolling up retreats. The active
+  // slide animates diagonally in from the bottom-right (see CSS transitions),
+  // replicating the source's parallax-on-scroll behaviour. The wheel is only
+  // "captured" while another slide exists in the scroll direction; at the ends
+  // the event passes through so the page keeps scrolling normally.
+  block.addEventListener('wheel', (e) => {
+    const dir = e.deltaY > 0 ? 1 : -1;
+    const next = current() + dir;
+    if (next < 0 || next >= slideCount) return; // at an end -> let the page scroll
+
+    // Within bounds: consume the scroll and move one slide.
+    e.preventDefault();
+
     const now = Date.now();
     if (now - lastAdvance < ADVANCE_THROTTLE_MS) return;
     lastAdvance = now;
-    setActiveSlide(block, parseInt(block.dataset.activeSlide || '0', 10) + 1);
-  };
-
-  // Mouse movement over the carousel advances to the next slide, which slides
-  // in diagonally from the bottom-right (see .carousel-story-slide transitions).
-  block.addEventListener('mousemove', advance);
+    setActiveSlide(block, next);
+  }, { passive: false });
 
   // Keyboard accessibility: arrow keys advance/retreat.
   block.setAttribute('tabindex', '0');
   block.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
-      setActiveSlide(block, parseInt(block.dataset.activeSlide || '0', 10) + 1);
+      setActiveSlide(block, current() + 1);
       e.preventDefault();
     } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
-      setActiveSlide(block, parseInt(block.dataset.activeSlide || '0', 10) - 1);
+      setActiveSlide(block, current() - 1);
       e.preventDefault();
     }
   });
