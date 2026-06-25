@@ -49,6 +49,46 @@ function closeAllFlyouts(nav) {
   if (overlay) overlay.classList.remove('is-visible');
 }
 
+/**
+ * Build the promo featured card (e.g. People > Job Opportunities): a background
+ * image with an eyebrow, heading, and a pill CTA overlaid. Source markup is a
+ * single <li> holding a bare <img>, two <p> lines (eyebrow, heading), and a
+ * <p><a> CTA.
+ */
+function buildPromoCard(li, img) {
+  const card = document.createElement('div');
+  card.className = 'nav-flyout-promo-card';
+
+  const picture = (img.closest('picture') || img).cloneNode(true);
+  picture.querySelectorAll('img').forEach(fixImagePath);
+  if (picture.tagName === 'IMG') fixImagePath(picture);
+  card.append(picture);
+
+  const body = document.createElement('div');
+  body.className = 'nav-flyout-promo-body';
+
+  const paras = Array.from(li.querySelectorAll(':scope > p'));
+  const ctaLinkEl = li.querySelector('p a, a');
+  paras.forEach((p, idx) => {
+    if (p.querySelector('a')) return; // CTA handled separately
+    const el = document.createElement(idx === 0 ? 'span' : 'h3');
+    el.className = idx === 0 ? 'nav-flyout-promo-eyebrow' : 'nav-flyout-promo-heading';
+    el.textContent = p.textContent.trim();
+    body.append(el);
+  });
+
+  if (ctaLinkEl) {
+    const cta = document.createElement('a');
+    cta.className = 'nav-flyout-promo-cta';
+    cta.href = ctaLinkEl.getAttribute('href');
+    cta.textContent = ctaLinkEl.textContent.trim();
+    body.append(cta);
+  }
+
+  card.append(body);
+  return card;
+}
+
 /** Build the desktop main navigation (menubar + hover flyouts). */
 function buildMainNav(sourceUl, nav) {
   const menubar = document.createElement('ul');
@@ -76,6 +116,20 @@ function buildMainNav(sourceUl, nav) {
       inner.className = 'nav-flyout-inner';
 
       groupUls.forEach((ul) => {
+        const liItems = Array.from(ul.children);
+
+        // Promo featured panel (e.g. People > Job Opportunities): a single <li>
+        // with a bare image plus eyebrow/heading paragraphs and a CTA link.
+        const promoLi = liItems.length === 1 ? liItems[0] : null;
+        const bareImg = promoLi ? promoLi.querySelector(':scope > img') : null;
+        if (bareImg) {
+          const col = document.createElement('div');
+          col.className = 'nav-flyout-col nav-flyout-promo';
+          col.append(buildPromoCard(promoLi, bareImg));
+          inner.append(col);
+          return;
+        }
+
         const col = document.createElement('div');
         const hasImages = !!ul.querySelector('img');
         col.className = hasImages ? 'nav-flyout-col nav-flyout-featured' : 'nav-flyout-col';
@@ -97,7 +151,18 @@ function buildMainNav(sourceUl, nav) {
             link.append(caption);
             cell.className = 'nav-flyout-card';
           } else {
-            link.textContent = a.textContent.trim();
+            const title = document.createElement('span');
+            title.className = 'nav-flyout-link-title';
+            title.textContent = a.textContent.trim();
+            link.append(title);
+            // Optional description paragraph that follows the link in the source.
+            const descEl = sourceLi.querySelector(':scope > p');
+            if (descEl && descEl.textContent.trim()) {
+              const desc = document.createElement('span');
+              desc.className = 'nav-flyout-link-desc';
+              desc.textContent = descEl.textContent.trim();
+              link.append(desc);
+            }
           }
           cell.append(link);
           colList.append(cell);
