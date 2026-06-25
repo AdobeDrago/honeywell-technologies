@@ -27,7 +27,9 @@ main > .section > .carousel-solutions-wrapper {
 
 @media (width >= 900px) {
   .carousel-solutions {
-    --carousel-side-inset: 40px;
+    /* Source left inset is 72px (32px section gutter + 40px inner margin); the
+       track bleeds off the right edge so the trailing card is partly clipped. */
+    --carousel-side-inset: 72px;
   }
 }
 
@@ -158,21 +160,33 @@ main > .section > .carousel-solutions-wrapper {
   color: var(--link-hover-color);
 }
 
-/* Leading CTA / intro card. Source uses a brand PNG (overview_card_bg_new.png)
-   that is CORS-blocked on localhost; this layered gradient approximates it: a red
-   field with a defined blue/purple streak sweeping up from the lower-left. */
+/* Leading CTA / intro card. Source layers a brand background image
+   (overview_card_bg_new.png) over a red field via an ::after element. */
 .carousel-solutions .carousel-solutions-slide.carousel-solutions-cta {
   background-color: #e30613;
-  background-image:
-    radial-gradient(120% 90% at 18% 108%, rgb(64 60 220 / 95%) 0%, rgb(96 30 200 / 70%) 26%, rgb(150 30 120 / 35%) 46%, rgb(227 6 19 / 0%) 66%),
-    linear-gradient(180deg, #e30613 0%, #e30613 100%);
+}
+
+.carousel-solutions .carousel-solutions-slide.carousel-solutions-cta::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  height: 100%;
+  background-image: url('./overview_card_bg_new.png');
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  pointer-events: none;
+  z-index: 0;
 }
 
 .carousel-solutions .carousel-solutions-slide.carousel-solutions-cta .carousel-solutions-slide-image {
   display: none;
 }
 
+/* Content sits above the ::after background image (z-index/position). */
 .carousel-solutions .carousel-solutions-slide.carousel-solutions-cta .carousel-solutions-slide-content {
+  position: relative;
+  z-index: 1;
   flex: 1 1 auto;
   justify-content: flex-start;
   gap: 16px;
