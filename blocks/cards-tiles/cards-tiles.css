@@ -11,7 +11,7 @@
    next (carousel-solutions) section. */
 main > .section > .cards-tiles-wrapper {
   max-width: none;
-  padding: 0 40px 140px;
+  padding: 0 72px 140px;
 }
 
 /* Section header (eyebrow + heading) -- imported as default content immediately
@@ -20,7 +20,7 @@ main > .section > .cards-tiles-wrapper {
 main > .section > .default-content-wrapper:has(+ .cards-tiles-wrapper) {
   max-width: none;
   margin: 0;
-  padding: 0 40px;
+  padding: 0 72px;
   box-sizing: border-box;
 }
 
