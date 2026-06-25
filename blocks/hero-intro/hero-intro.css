@@ -32,20 +32,22 @@
   min-height: 200px;
 }
 
-/* Top-right quadrant: red (lower-left) sweeping through magenta/purple to a
-   light lavender toward the upper-right -- darker on the left & bottom. */
+/* Top-right quadrant: source brand gradient PNG (hero-right-box-bg.png). */
 .hero-intro .hero-intro-media-tr {
   background-color: #e6e2f5;
-  background-image:
-    radial-gradient(120% 120% at 0% 100%, #e30613 0%, #d61773 26%, #8a2be2 50%, rgb(138 43 226 / 25%) 68%, rgb(230 226 245 / 0%) 82%),
-    linear-gradient(135deg, rgb(230 226 245) 0%, rgb(243 240 250) 100%);
+  background-image: url('./hero-right-box-bg.png');
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
-/* Bottom-left quadrant: red at the left edge fading to near-white on the right. */
+/* Bottom-left quadrant: source brand gradient PNG (hero-left-box-bg.png). */
 .hero-intro .hero-intro-media-bl {
   background-color: #fff;
-  background-image:
-    radial-gradient(130% 120% at 0% 60%, #e30613 0%, #ef5a6b 28%, #f8c4cb 50%, rgb(255 255 255 / 0%) 72%);
+  background-image: url('./hero-left-box-bg.png');
+  background-position: 100% 0;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .hero-intro .hero-intro-heading h1 {
