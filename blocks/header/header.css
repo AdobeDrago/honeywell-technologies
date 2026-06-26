@@ -245,7 +245,13 @@ header nav .nav-flyout-promo-cta:hover {
 }
 
 /* Dark promo (e.g. Solutions > Honeywell Forge): white text on a dark image,
-   outlined transparent CTA. */
+   outlined transparent CTA. A dark-red gradient backs the card so the white
+   text stays legible even if the (external) promo image fails to load. */
+header nav .nav-flyout-promo-card-dark {
+  background:
+    radial-gradient(120% 90% at 100% 0%, #e30613 0%, #7a0a13 38%, #3a0008 100%);
+}
+
 header nav .nav-flyout-promo-card-dark .nav-flyout-promo-eyebrow,
 header nav .nav-flyout-promo-card-dark .nav-flyout-promo-heading {
   color: #fff;

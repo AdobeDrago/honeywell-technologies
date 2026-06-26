@@ -61,7 +61,9 @@ function buildPromoCard(li, img) {
 
   // Dark-background promos (e.g. Solutions > Honeywell Forge) use white text and
   // an outlined CTA; light promos (e.g. People) keep dark text on a white pill.
-  if (/dark/i.test(img.getAttribute('src') || '')) {
+  // Key off the alt text since the source img filename ("hon-dark-red-...") is
+  // not always present in the resolved src (DA may rewrite/strip the URL).
+  if (/forge/i.test(img.getAttribute('alt') || '')) {
     card.classList.add('nav-flyout-promo-card-dark');
   }
 
@@ -73,10 +75,13 @@ function buildPromoCard(li, img) {
   const body = document.createElement('div');
   body.className = 'nav-flyout-promo-body';
 
-  const paras = Array.from(li.querySelectorAll(':scope > p'));
+  // Text paragraphs are the <p>s that hold neither the image nor a link: the
+  // first is the eyebrow, the second the heading. The image-wrapper <p>
+  // (production) and the CTA <p> are excluded so indices stay stable.
+  const textParas = Array.from(li.querySelectorAll(':scope > p'))
+    .filter((p) => !p.querySelector('a') && !p.querySelector('img') && p.textContent.trim());
   const ctaLinkEl = li.querySelector('p a, a');
-  paras.forEach((p, idx) => {
-    if (p.querySelector('a')) return; // CTA handled separately
+  textParas.forEach((p, idx) => {
     const el = document.createElement(idx === 0 ? 'span' : 'h3');
     el.className = idx === 0 ? 'nav-flyout-promo-eyebrow' : 'nav-flyout-promo-heading';
     el.textContent = p.textContent.trim();
@@ -125,9 +130,12 @@ function buildMainNav(sourceUl, nav) {
         const liItems = Array.from(ul.children);
 
         // Promo featured panel (e.g. People > Job Opportunities): a single <li>
-        // with a bare image plus eyebrow/heading paragraphs and a CTA link.
+        // with an image plus eyebrow/heading paragraphs and a CTA link. The image
+        // may be a bare <img> (localhost) or wrapped in a <p> (DA/production).
         const promoLi = liItems.length === 1 ? liItems[0] : null;
-        const bareImg = promoLi ? promoLi.querySelector(':scope > img') : null;
+        const bareImg = promoLi
+          ? promoLi.querySelector(':scope > img, :scope > p > img')
+          : null;
         if (bareImg) {
           const col = document.createElement('div');
           col.className = 'nav-flyout-col nav-flyout-promo';
@@ -161,8 +169,11 @@ function buildMainNav(sourceUl, nav) {
             title.className = 'nav-flyout-link-title';
             title.textContent = a.textContent.trim();
             link.append(title);
-            // Optional description paragraph that follows the link in the source.
-            const descEl = sourceLi.querySelector(':scope > p');
+            // Optional description paragraph. On localhost it's a bare <p>
+            // sibling of the link; on DA/production the link itself sits in a
+            // <p>, so pick the first <p> that has no link of its own.
+            const descEl = Array.from(sourceLi.querySelectorAll(':scope > p'))
+              .find((p) => !p.querySelector('a'));
             if (descEl && descEl.textContent.trim()) {
               const desc = document.createElement('span');
               desc.className = 'nav-flyout-link-desc';
