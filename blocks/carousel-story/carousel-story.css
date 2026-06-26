@@ -75,12 +75,22 @@
   visibility: hidden;
   transform: translate(100%, 100%);
   transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
-  background-image: url('./storytelling-bg-br.png');
   background-color: rgb(245 245 245 / 50%);
   background-size: 55% auto;
-  background-position: 100% 100%;
   background-repeat: no-repeat;
   pointer-events: none;
+}
+
+/* Source: odd slides carry a bottom-right gradient (bg-br), even slides a
+   top-left gradient (bg-tl). */
+.carousel-story .carousel-story-slide:nth-child(odd) {
+  background-image: url('./storytelling-bg-br.png');
+  background-position: 100% 100%;
+}
+
+.carousel-story .carousel-story-slide:nth-child(even) {
+  background-image: url('./storytelling-bg-tl.png');
+  background-position: 0 0;
 }
 
 .carousel-story .carousel-story-slide.is-active {
