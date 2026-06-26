@@ -40,6 +40,25 @@ function ownLink(li) {
   return li.querySelector(':scope > a, :scope > p > a');
 }
 
+/**
+ * Canonical promo image URLs keyed by alt text. The DA publish pipeline can fail
+ * to ingest external (scene7) images, leaving `src="about:error"`; this restores
+ * the correct source by matching the preserved alt text.
+ */
+const PROMO_IMAGES = {
+  'job opportunities': 'https://honeywell.scene7.com/is/image/honeywellstage/hon-professional-portrait-desk-laptop-clean-background-400x480',
+  'honeywell forge': 'https://honeywell.scene7.com/is/image/honeywellstage/hon-dark-red-background-vertical-placeholder',
+};
+
+/** Repair a promo <img> whose src failed to resolve (DA stripped external URLs). */
+function fixPromoImage(img) {
+  const src = img.getAttribute('src') || '';
+  const broken = !src || /^about:/.test(src) || src.endsWith('about:error');
+  if (!broken) return;
+  const key = (img.getAttribute('alt') || '').trim().toLowerCase();
+  if (PROMO_IMAGES[key]) img.setAttribute('src', PROMO_IMAGES[key]);
+}
+
 /** Close any open desktop flyout. */
 function closeAllFlyouts(nav) {
   nav.querySelectorAll('.nav-main-item.has-flyout[aria-expanded="true"]').forEach((li) => {
@@ -67,10 +86,12 @@ function buildPromoCard(li, img) {
     card.classList.add('nav-flyout-promo-card-dark');
   }
 
-  const picture = (img.closest('picture') || img).cloneNode(true);
-  picture.querySelectorAll('img').forEach(fixImagePath);
-  if (picture.tagName === 'IMG') fixImagePath(picture);
-  card.append(picture);
+  // Use a bare <img> (not the <picture>) so broken <source srcset> entries from
+  // a failed DA ingest can't win over the repaired src.
+  const promoImg = img.cloneNode(true);
+  fixImagePath(promoImg);
+  fixPromoImage(promoImg);
+  card.append(promoImg);
 
   const body = document.createElement('div');
   body.className = 'nav-flyout-promo-body';
