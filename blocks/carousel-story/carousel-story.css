@@ -59,8 +59,11 @@
   pointer-events: none;
 }
 
-/* All slides stacked in the same cell. Non-active slides are parked off to the
-   bottom-right and faded out; the active slide animates into place. */
+/* All slides stacked in the same cell. A non-active slide is parked fully off
+   the bottom-right corner (translate 100%/100%) so that, as it animates in, its
+   top-left corner sweeps up from the container's bottom-right corner toward the
+   top-left -- the two corners appear to touch at the start of the transition,
+   replicating the source's diagonal parallax slide-in. */
 .carousel-story .carousel-story-slide {
   position: absolute;
   inset: 0;
@@ -70,8 +73,8 @@
   min-height: 70vh;
   opacity: 0;
   visibility: hidden;
-  transform: translate(8%, 12%);
-  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.7s ease;
+  transform: translate(100%, 100%);
+  transition: transform 0.9s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.6s ease;
   background-image: url('./storytelling-bg-br.png');
   background-color: rgb(245 245 245 / 50%);
   background-size: 55% auto;
