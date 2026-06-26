@@ -81,6 +81,14 @@
   pointer-events: none;
 }
 
+/* Reverse direction (scroll up / previous): inactive slides are parked off the
+   top-left corner so the incoming slide sweeps diagonally DOWN from the top-left
+   to bottom-right -- the corners appear to touch at the start, mirroring the
+   forward (bottom-right -> top-left) sweep. */
+.carousel-story[data-direction='back'] .carousel-story-slide {
+  transform: translate(-100%, -100%);
+}
+
 /* Source: odd slides carry a bottom-right gradient (bg-br), even slides a
    top-left gradient (bg-tl). */
 .carousel-story .carousel-story-slide:nth-child(odd) {

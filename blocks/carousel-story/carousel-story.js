@@ -49,6 +49,9 @@ function bindEvents(block) {
     const now = Date.now();
     if (now - lastAdvance < ADVANCE_THROTTLE_MS) return;
     lastAdvance = now;
+    // Forward (scroll down): incoming slide sweeps from the bottom-right corner.
+    // Backward (scroll up): incoming slide sweeps from the top-left corner.
+    block.dataset.direction = dir > 0 ? 'forward' : 'back';
     setActiveSlide(block, next);
   }, { passive: false });
 
@@ -56,9 +59,11 @@ function bindEvents(block) {
   block.setAttribute('tabindex', '0');
   block.addEventListener('keydown', (e) => {
     if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+      block.dataset.direction = 'forward';
       setActiveSlide(block, current() + 1);
       e.preventDefault();
     } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+      block.dataset.direction = 'back';
       setActiveSlide(block, current() - 1);
       e.preventDefault();
     }
