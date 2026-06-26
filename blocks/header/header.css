@@ -189,6 +189,8 @@ header nav .nav-flyout-promo {
 
 header nav .nav-flyout-promo-card {
   position: relative;
+  display: flex;
+  flex-direction: column;
   min-height: 420px;
   overflow: hidden;
 }
@@ -210,8 +212,10 @@ header nav .nav-flyout-promo-body {
   align-items: flex-start;
   gap: 12px;
 
-  /* Fill the card so the CTA can sit at the bottom-left, away from the text. */
-  height: 100%;
+  /* Grow to fill the card (flex column) so the CTA's margin-top:auto can push
+     it to the bottom-left. flex-grow works even when the card height comes from
+     min-height, unlike a percentage height. */
+  flex: 1 1 auto;
   box-sizing: border-box;
   padding: 32px;
 }
