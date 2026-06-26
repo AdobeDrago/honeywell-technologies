@@ -209,6 +209,10 @@ header nav .nav-flyout-promo-body {
   flex-direction: column;
   align-items: flex-start;
   gap: 12px;
+
+  /* Fill the card so the CTA can sit at the bottom-left, away from the text. */
+  height: 100%;
+  box-sizing: border-box;
   padding: 32px;
 }
 
@@ -229,7 +233,8 @@ header nav .nav-flyout-promo-heading {
 }
 
 header nav .nav-flyout-promo-cta {
-  margin-top: 12px;
+  /* Push the CTA to the bottom of the card, separated from the heading. */
+  margin-top: auto;
   padding: 12px 24px;
   border: 1px solid rgb(157 164 174);
   border-radius: 24px;
