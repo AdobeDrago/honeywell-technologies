@@ -71,7 +71,7 @@ header nav .nav-main-link {
 }
 
 header nav .nav-main-link:hover {
-  color: var(--link-hover-color);
+  text-decoration: underline;
 }
 
 /* Flyout megamenu (desktop) */
@@ -297,7 +297,7 @@ header nav .nav-utility-link {
 }
 
 header nav .nav-utility-link:hover {
-  color: var(--link-hover-color);
+  text-decoration: underline;
 }
 
 /* Tools (hamburger + slide-in panel) -- hamburger is desktop-hidden; the
